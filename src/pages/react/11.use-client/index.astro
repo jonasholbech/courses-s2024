@@ -1,0 +1,114 @@
+---
+import SlideLayout from "../../../layouts/SlideLayout.astro";
+import Goal from "../../../components/Goal.astro";
+import AgendaSection from "../../../components/AgendaSection.astro";
+import codeFetcher from "../../../js/codeFetcher";
+import Code from "../../../components/Code.astro";
+const snippets = await codeFetcher("react/11.use-client", [
+  "simple.js",
+  "layout.js",
+  "client.js",
+]);
+---
+
+<SlideLayout title="use client">
+  <section>
+    <h1>React</h1>
+    <img src="/assets/react/0.need-to-know-js/react.png" alt="" />
+  </section>
+  <Goal>
+    <ol>
+      <li>Using React in Next</li>
+    </ol>
+  </Goal>
+  <AgendaSection header="A few words">
+    <section>
+      <h1>SSG</h1>
+      <p class="fragment">Static Site generation</p>
+      <p class="fragment">Think Astro</p>
+      <p class="fragment">Super perfomant, super SEO</p>
+      <p class="fragment">Next can do this too</p>
+    </section>
+    <section>
+      <h1>SSR</h1>
+      <p class="fragment">Server Side Rendering</p>
+      <p class="fragment">Think Next</p>
+      <p class="fragment">super SEO</p>
+      <p class="fragment">Astro can do this too</p>
+    </section>
+    <section>
+      <h1>CSR</h1>
+      <p class="fragment">Client Side Rendering</p>
+      <p class="fragment">Think Vanilla / React</p>
+      <p class="fragment"><del>super SEO</del></p>
+      <p class="fragment">Next (with React) can do this too</p>
+    </section>
+  </AgendaSection>
+
+  <AgendaSection header="<code>use client</code>">
+    <section>
+      <h2>No client side code</h2>
+      <p>Next is SSR or SSG</p>
+      <p>Which means we cannot run client side code</p>
+      <p>unless we tell it to</p>
+    </section>
+    <section>
+      <p>If we want a component to be CSR (so we can run JS / React</p>
+      <p>we add <code>"use client"</code> as the first line in our files</p>
+    </section>
+    <section>
+      <blockquote>
+        "use client" is used to declare a boundary between a Server and Client
+        Component modules. This means that by defining a "use client" in a file,
+        all other modules imported into it, including child components, are
+        considered part of the client bundle.
+      </blockquote>
+      <cite
+        ><a
+          href="https://nextjs.org/docs/app/building-your-application/rendering/client-components"
+          >https://nextjs.org/docs/app/building-your-application/rendering/client-components</a
+        ></cite
+      >
+    </section>
+    <section>
+      <Code code={snippets["simple.js"]} />
+    </section>
+    <section>
+      <p>When to use what?</p>
+      <p>
+        <a
+          href="https://nextjs.org/docs/app/building-your-application/rendering/composition-patterns"
+          >https://nextjs.org/docs/app/building-your-application/rendering/composition-patterns</a
+        >
+      </p>
+    </section>
+    <section>
+      <p>This is confussing, but</p>
+      <ol>
+        <li class="fragment">
+          The more client components you have, the bigger the JS file
+        </li>
+        <li class="fragment">
+          If you import a component in a client component, it becomes a client
+          component
+        </li>
+      </ol>
+    </section>
+    <section>
+      <p>So, this is bad</p>
+      <Code code={snippets["client.js"]} />
+      <p>They all become client</p>
+    </section>
+    <section>
+      <p>this is ok</p>
+      <Code code={snippets["layout.js"]} />
+    </section>
+    <section>
+      <p>It's OK to mess this up for now</p>
+      <p>
+        But you should run <code>npm run build</code> once in a while to check your
+        JS bundle size
+      </p>
+    </section>
+  </AgendaSection>
+</SlideLayout>

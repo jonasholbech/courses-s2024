@@ -1,0 +1,19 @@
+---
+const { scale = "100%", wrap } = Astro.props;
+---
+
+<ol
+  class="reveal-overwrite"
+  style={`--scale: ${scale}; --wrap:${wrap ? "wrap" : "no-wrap"}`}
+>
+  <slot />
+</ol>
+
+<style>
+  ol.reveal-overwrite {
+    display: flex;
+    flex-wrap: var(--wrap);
+    gap: 2rem;
+    scale: var(--scale);
+  }
+</style>

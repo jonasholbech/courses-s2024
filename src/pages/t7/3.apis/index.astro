@@ -1,0 +1,99 @@
+---
+import SlideLayout from "../../../layouts/SlideLayout.astro";
+import codeFetcher from "../../../js/codeFetcher";
+import Code from "../../../components/Code.astro";
+import AgendaSection from "../../../components/AgendaSection.astro";
+import Goal from "../../../components/Goal.astro";
+const snippets = await codeFetcher("t7/3.apis", []);
+---
+
+<SlideLayout title="API's">
+  <section>
+    <section>
+      <h1>API's</h1>
+    </section>
+  </section>
+
+  <section>
+    <Goal>
+      <ol>
+        <li>A basic Understanding of what an API is</li>
+      </ol>
+    </Goal>
+  </section>
+
+  <section>
+    <section>
+      <h1><small>Introduction to API's</small></h1>
+    </section>
+    <section>
+      <h2>Application Programming Interfaces</h2>
+    </section>
+    <section>
+      <blockquote>
+        <p>
+          In computer programming, an application programming interface (API) is
+          a set of subroutine definitions, communication protocols, and tools
+          for building software. <span class="fragment highlight-blue"
+            >In general terms, it is a set of clearly defined methods of
+            communication among various components.</span
+          >
+          <span class="fragment highlight-blue"
+            >A good API makes it easier to develop a computer program by
+            providing all the building blocks, which are then put together by
+            the programmer.</span
+          >
+        </p>
+      </blockquote>
+      <cite
+        ><a
+          href="https://en.wikipedia.org/wiki/Application_programming_interface"
+          >https://en.wikipedia.org/wiki/Application_programming_interface</a
+        >
+      </cite>
+    </section>
+    <section>
+      <h3>In plainer english</h3>
+      <ul>
+        <li>It's a service, someone built we can interact with</li>
+        <li>Commonly, it's a database system</li>
+        <li>Or some code others built, that we can use</li>
+        <li>It's also what they call a lot of browser features</li>
+      </ul>
+      <p>
+        Examples: <a href="https://developer.mozilla.org/en-US/docs/Web/API"
+          >https://developer.mozilla.org/en-US/docs/Web/API</a
+        >
+      </p>
+    </section>
+    <section>
+      <h3>In programming</h3>
+      <ul>
+        <li>When you use a library someone else wrote (jQuery, React etc)</li>
+        <li>
+          They have "exposed" a set of functions/methods that you can use
+          (interface with)
+        </li>
+        <li>That's the API</li>
+      </ul>
+    </section>
+    <section>
+      <h3>In databases</h3>
+      <ul>
+        <li>
+          The authors/owners of the DB will have exposed certain parts of the
+          data
+        </li>
+        <li>
+          Using various techniques (often <code>fetch</code>) you can query the
+          database
+        </li>
+        <li>
+          Most data-API's will allow you to READ data, few will allow you to
+          POST data
+        </li>
+      </ul>
+      <p>When getting data from a database, we'll most likely get it as JSON</p>
+    </section>
+  </section>
+</SlideLayout>

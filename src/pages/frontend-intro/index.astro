@@ -1,0 +1,334 @@
+---
+import SlideLayout from "../../layouts/SlideLayout.astro";
+import Goal from "../../components/Goal.astro";
+import AgendaSection from "../../components/AgendaSection.astro";
+import Explainer from "../../components/Explainer.svelte";
+import codeFetcher from "../../js/codeFetcher";
+import Code from "../../components/Code.astro";
+import SlideControls from "../../components/SlideControls.astro";
+
+const snippets = await codeFetcher("react/5.pagination", []);
+---
+
+<SlideLayout title="Frontend Design, Intro">
+  <section>
+    <h1>Frontend</h1>
+    <h2>Introduction</h2>
+    <h3>@jofh</h3>
+  </section>
+  <section>
+    <SlideControls />
+  </section>
+
+  <section data-auto-animate>
+    <h2>4 undervisere</h2>
+    <ol>
+      <li>
+        Peter <span class="highlight-specialty">"The Designer"</span> Tolstrup (ptoa)
+      </li>
+      <li>
+        Klaus <span class="highlight-specialty">"Vanilla"</span> Mandal (klmh)
+      </li>
+      <li>
+        Dannie <span class="highlight-specialty">"The CSS guy"</span> Vinther (davi)
+      </li>
+      <li>
+        Jonas <span class="highlight-specialty">"The Tool"</span> Holbech (jofh)
+      </li>
+    </ol>
+  </section>
+
+  <section data-auto-animate>
+    <h2>1. tema</h2>
+    <ol>
+      <li>
+        Klaus <span class="highlight-specialty">"Vanilla"</span> Mandal (klmh)
+      </li>
+      <li>
+        Dannie <span class="highlight-specialty">"The CSS guy"</span> Vinther (davi)
+      </li>
+    </ol>
+  </section>
+
+  <section data-auto-animate>
+    <h2>2. tema</h2>
+    <ol>
+      <li>
+        Peter <span class="highlight-specialty">"The Designer"</span> Tolstrup (ptoa)
+      </li>
+      <li>
+        Dannie <span class="highlight-specialty">"The CSS guy"</span> Vinther (davi)
+      </li>
+    </ol>
+  </section>
+  <section data-auto-animate>
+    <h2>3. tema</h2>
+    <ol>
+      <li>
+        Dannie <span class="highlight-specialty">"The CSS guy"</span> Vinther (davi)
+      </li>
+      <li>
+        Jonas <span class="highlight-specialty">"The Tool"</span> Holbech (jofh)
+      </li>
+    </ol>
+  </section>
+  <section data-auto-animate>
+    <h2>4. tema</h2>
+    <ol>
+      <li>
+        Jonas <span class="highlight-specialty">"The Tool"</span> Holbech (jofh)
+      </li>
+    </ol>
+  </section>
+  <section>
+    <p>Hvordan har vi fundet på hvad vi skal lege med?</p>
+    <p>Vi:</p>
+    <ol>
+      <li>Spurgte på "frontenders.dk" (en facebook gruppe)</li>
+      <li>
+        Kiggede på <a href="https://frontendmasters.com/guides/"
+          >Frontendmasters ressources</a
+        >
+      </li>
+      <li>og besluttede at:</li>
+    </ol>
+  </section>
+  <section>
+    <div class="flex-grid">
+      <div class="col-6">
+        <ul>
+          <li>The terminal</li>
+          <li>git</li>
+          <li>Vanilla JS FTW</li>
+          <li>NPM</li>
+          <li>React</li>
+          <li>Next</li>
+        </ul>
+      </div>
+      <div class="col-6">
+        <ul>
+          <li><span style="text-decoration: line-through">jQuery</span></li>
+          <li><span style="text-decoration: line-through">WordPress</span></li>
+          <li><span style="text-decoration: line-through">Bootstrap</span></li>
+          <li>
+            <span style="text-decoration: line-through">Angular/Vue</span>
+          </li>
+          <li><span style="text-decoration: line-through">YARN</span></li>
+          <li><span style="text-decoration: line-through">LESS</span></li>
+          <li><span style="text-decoration: line-through">SASS</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section>
+    <blockquote>
+      Det skal se godt ud, det skal virke, det skal give relevant feedback
+    </blockquote>
+  </section>
+  <section>
+    <section>
+      <h1>Eksamen</h1>
+    </section>
+    <section>
+      <p class="fragment">ALLE skal kode</p>
+      <p class="fragment">JS &amp; CSS</p>
+      <p class="fragment">Du kan ikke bestå uden!</p>
+      <p class="fragment">git og branches skal bruges, aktivt</p>
+    </section>
+    <section>
+      <p>
+        <a href="https://katalog.kea.dk/course/3273331/2023-2024"
+          >Det officielle halløj</a
+        >
+      </p>
+      <ol>
+        <li>3-4 uger til at lave dit projekt</li>
+        <li>2-4 personer i hver gruppe</li>
+        <li>
+          Alle bundne forudsætninger skal være afleveret og bestået (mere om
+          lidt)
+        </li>
+        <li>
+          "Synopsis": 2 sider plus 1 pr gruppemedlem<br />
+          <pre><code class="js">const pages = 2 + groupmembers.length;</code></pre>
+        </li>
+      </ol>
+    </section>
+    <section>
+      <ol start="5">
+        <li>
+          Selve eksamen<ol>
+            <li>
+              Projektdemonstration (10 min + 5 min pr. gruppemedlem)
+              <li>Individuel eksamination (20 min)</li>
+              <li>Votering og meddelelse af karakterer (5 min)</li>
+            </li>
+          </ol>
+        </li>
+      </ol>
+    </section>
+    <section>
+      <h3>Bundne forudsætninger (BF)</h3>
+      <ul>
+        <li>Alle BF'er skal afleveres og bestås for at kunne gå til eksamen</li>
+        <li>Alle BF'er har en deadline, rettidige aflevering får feedback</li>
+        <li>
+          Teksnisk set kan du bare aflevere når du afleverer dit eksamensprojekt
+          <ul><li>MEN LAD VÆRE!!!!!</li></ul>
+        </li>
+        <li>Der er 3 BF'ere</li>
+      </ul>
+    </section>
+  </section>
+  <section>
+    <section>
+      <h2>
+        <a
+          href="https://kea-fronter.itslearning.com/ContentArea/ContentArea.aspx?LocationID=6161&LocationType=1"
+          >Ugeplanen</a
+        >
+      </h2>
+    </section>
+    <section>
+      <ul>
+        <li>Forstå fronter planen</li>
+        <li>TL;DL Too Long Didn't Listen</li>
+        <li>Work in progress, vi forbeholder os retten til at …</li>
+        <li>Front load - Løs opgaven når du har tid</li>
+        <li>Move fast, break stuff</li>
+        <li>Two learning paths - teaching - javascript.info</li>
+      </ul>
+    </section>
+  </section>
+
+  <section>
+    <h2>
+      <a
+        href="https://teams.microsoft.com/l/team/19%3a8UJVsYUx8JMoE68RB9-BTG7jpPoZiGeb_RUjkCatgGw1%40thread.tacv2/conversations?groupId=c20205cc-7d1a-41b4-9d11-a565bed66d18&tenantId=d10c3c6e-c228-4944-8b6a-6067c6afe3c9"
+        >Vores Teams Rum</a
+      >
+    </h2>
+  </section>
+  <section>
+    <h2>
+      <a href="https://www.facebook.com/groups/411356550003557"
+        >KEA frontenders FaceBook group</a
+      >
+    </h2>
+  </section>
+  <section>
+    <section>
+      <h1>Tutors</h1>
+    </section>
+    <section>
+      <ul>
+        <li>Hver onsdag</li>
+        <li>3. etage (foran A360)</li>
+        <li>
+          Og på Teams: <a href="https://bit.ly/3H0tkzE"
+            >https://bit.ly/3H0tkzE</a
+          >
+        </li>
+      </ul>
+    </section>
+  </section>
+  <section>
+    <section>
+      <h1>Løse tanker</h1>
+      <h2 class="fragment">og lidt om AI</h2>
+    </section>
+    <section>
+      <p>Vi lærer alle lidt forskelligt</p>
+      <p>Og vi starter forskellige steder</p>
+    </section>
+    <section>
+      <img src="/assets/frontend-intro/learning-pyramid2.jpg" alt="" />
+      <p><small>omdiskuteret model</small></p>
+    </section>
+    <section>
+      <ol>
+        <li>Vær aktiv, diskutér, stil spørgsmål</li>
+      </ol>
+    </section>
+    <section>
+      <ol start="2">
+        <li>Hjælp hinanden, vi rykker alle sammen hurtigere</li>
+      </ol>
+    </section>
+    <section>
+      <ol start="3">
+        <li>
+          Socialize
+          <ul>
+            <li>Network!</li>
+          </ul>
+        </li>
+      </ol>
+    </section>
+    <section>
+      <ol start="4">
+        <li>Del hvad i laver</li>
+      </ol>
+    </section>
+  </section>
+  <section>
+    <section>
+      <h1><code>ChatGPT</code></h1>
+      <p>Og alle de andre</p>
+    </section>
+    <section>
+      <h2 class="fragment" data-fragment-index="5">Game changers</h2>
+      <ol>
+        <li class="fragment" data-fragment-index="1">✏️</li>
+        <li class="fragment" data-fragment-index="2">🧮</li>
+        <li class="fragment" data-fragment-index="3">🌐</li>
+        <li class="fragment" data-fragment-index="4">ChatGPT</li>
+      </ol>
+    </section>
+    <section>
+      <p>ChatGPT og lignende er helt fantastiske, meeeeeennnnnnn.</p>
+      <p>Vi kan bruge den rigtigt og forkert</p>
+    </section>
+    <section>
+      <h2>Forkert brug</h2>
+      <p>(hjælp her og nu)</p>
+      <p><span class="fragment">💩 til eksamen og i praktikken</span></p>
+    </section>
+    <section>
+      <h3>Dårlige prompts</h3>
+      <ul>
+        <li>Skriv en funktion der...</li>
+        <li>Løs min opgave</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Korrekt brug</h2>
+      <p class="fragment">("Retention" og ❤️ til eksamen og i praktikken)</p>
+    </section>
+    <section>
+      <h3>Gode prompts</h3>
+      <ul>
+        <li>Forklar hvad X gør i JavaScript</li>
+        <li>Hvad betyder den her fejl?</li>
+        <li>Hvordan virker den her kode?</li>
+      </ul>
+    </section>
+    <section>
+      <h3>Hvad ved vi om læring?</h3>
+      <p>muscle memory</p>
+      <p>erfaring</p>
+    </section>
+    <section>
+      <p>så...</p>
+      <p>kæmp!</p>
+      <p>Vent med at tage den lette løsning</p>
+      <p>Programmering handler om at nedbryde problemer</p>
+      <p>det lærer du ikke hvis du får den leveret</p>
+      <p class="fragment">tror jeg nok</p>
+    </section>
+  </section>
+  <section>
+    <p>Og en besked fra sidste semester:</p>
+    <blockquote class="fragment">You won't need one.com etc</blockquote>
+  </section>
+</SlideLayout>

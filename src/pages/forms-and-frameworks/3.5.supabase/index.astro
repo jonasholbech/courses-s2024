@@ -1,0 +1,58 @@
+---
+import SlideLayout from "../../../layouts/SlideLayout.astro";
+import codeFetcher from "../../../js/codeFetcher";
+import Code from "../../../components/Code.astro";
+//import Explainer from "../../../components/Explainer.svelte";
+import AgendaSection from "../../../components/AgendaSection.astro";
+import Goal from "../../../components/Goal.astro";
+const snippets = await codeFetcher("forms-and-frameworks/3.supabase", []);
+---
+
+<SlideLayout title="supabase">
+  <AgendaSection header="Agenda">
+    <section>
+      <ol>
+        <li>Late night learnings</li>
+        <li>Live server on mobile</li>
+        <li>GET'ting data</li>
+        <li>DELETE'ing data</li>
+        <li>PATCH'ing data</li>
+        <li>POST'ing data</li>
+        <li>Code clean-up</li>
+      </ol>
+    </section>
+  </AgendaSection>
+  <AgendaSection header="more supabase" />
+  <section>
+    <p>Things I learned over the night</p>
+    <p class="fragment">
+      Actually, I've learned it before, but forgotten, now it's documented'
+    </p>
+  </section>
+
+  <section>
+    <p>
+      Our <code>DEL</code>, <code>PATCH</code> &amp; <code>POST</code> requests return
+      nothing
+    </p>
+    <p>If we add a <code>header</code> with</p>
+    <p><code>Prefer: return=representation</code></p>
+    <p>It does</p>
+    <p class="fragment">As an array</p>
+  </section>
+  <section>
+    <p>Live-Server on mobile?</p>
+    <ol>
+      <li>Start your live server</li>
+      <li>Remember the http://127.0.0.1<code>:port</code></li>
+      <li>
+        Go to WiFi settings and find your local IP address<br />
+        <a
+          href="https://medium.com/@pavankapoor31/how-to-use-vs-code-live-server-local-host-on-mobile-phone-8b38a62117d2"
+          >Here's how on Windows</a
+        >
+      </li>
+      <li>Put that number in your mobile browser and add the port</li>
+    </ol>
+  </section>
+</SlideLayout>

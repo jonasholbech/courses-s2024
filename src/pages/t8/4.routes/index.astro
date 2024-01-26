@@ -1,0 +1,209 @@
+---
+import SlideLayout from "../../../layouts/SlideLayout.astro";
+import codeFetcher from "../../../js/codeFetcher";
+import Code from "../../../components/Code.astro";
+import Explainer from "../../../components/Explainer.svelte";
+import AgendaSection from "../../../components/AgendaSection.astro";
+import Goal from "../../../components/Goal.astro";
+import CompletionTracker from "../../../components/CompletionTracker.svelte";
+
+const snippets = await codeFetcher("t8/4.routes", [
+  "routes.txt",
+  "[dog].astro",
+  "[dog-advanced].astro",
+  "[post-fetch].astro",
+  "[post-static].astro",
+  "filter1.js",
+  "filter2.js",
+  "filter3.js",
+  "filter4.js",
+  "filter5.js",
+  "filter6.js",
+]);
+---
+
+<SlideLayout title="Astro - Routing">
+  <AgendaSection header="Astro - Routing">
+    <Goal>
+      <ol>
+        <li>See how dynamic subpages are built</li>
+      </ol>
+    </Goal>
+
+    <section>
+      <h2>Agenda</h2>
+      <ol>
+        <li>Static Routes</li>
+        <li>Dynamic Routes</li>
+        <li>filtering data</li>
+      </ol>
+    </section>
+  </AgendaSection>
+  <section>
+    <p>
+      <a href="https://docs.astro.build/en/core-concepts/routing/"
+        >https://docs.astro.build/en/core-concepts/routing/</a
+      >
+    </p>
+  </section>
+  <AgendaSection header="Static Routes">
+    <section>
+      <blockquote>
+        <p>
+          .astro page components within the <code>src/pages/</code> directory automatically
+          become pages on your website. Each page's route corresponds to its path
+          and filename within the <code>src/pages/</code> directory.
+        </p>
+      </blockquote>
+      <div class="fragment">
+        <Code code={snippets["routes.txt"]} language="txt" startFrom="1" />
+      </div>
+    </section>
+  </AgendaSection>
+  <AgendaSection header="Dynamic Routes">
+    <section class="left">
+      <p>
+        An Astro page file can specify dynamic route parameters in its filename
+        to generate multiple, matching pages. For example,<span
+          class="fragment"
+        >
+          <code>src/pages/authors/[author].astro</code> generates a bio page for
+          every author on your blog.</span
+        >
+      </p>
+      <p class="fragment">
+        <code>author</code> becomes a <kbd>parameter</kbd> that you can access from
+        inside the page.
+      </p>
+    </section>
+    <section class="left">
+      <p>
+        In Astro's, these pages are generated at build time, and so <span
+          class="fragment highlight-blue"
+          >you must predetermine the list of authors that get a corresponding
+          file.</span
+        >
+      </p>
+    </section>
+    <section class="left">
+      <p>
+        Because all routes must be determined at build time, we must tell Astro
+        what pages exists
+      </p>
+      <p>
+        We do that by calling a "magic" function called <code
+          >getStaticPaths</code
+        >
+      </p>
+      <p>
+        Which returns an array of objects with a <code>params</code>
+        <kbd>property</kbd>
+      </p>
+      <p>For each object, Astro will generate a page</p>
+    </section>
+  </AgendaSection>
+  <AgendaSection header="Code">
+    <section>
+      <Code
+        code={snippets["[dog].astro"]}
+        language="js"
+        startFrom="1"
+        lineNumbers="1,11|2,8|3,7|4|10,13|*"
+        stretch
+      />
+      <div class="fragment">
+        <p>This will generate three pages:</p>
+        <ul>
+          <li><kbd>/dogs/rufus</kbd></li>
+          <li><kbd>/dogs/plet</kbd></li>
+          <li><kbd>/dogs/joey</kbd></li>
+        </ul>
+
+        <p>each displaying the corresponding dog name.</p>
+      </div>
+    </section>
+    <section>
+      <p>Men som regel vil vi have mere data med</p>
+      <Code
+        code={snippets["[dog-advanced].astro"]}
+        language="js"
+        startFrom="1"
+        lineNumbers="4|11|14|"
+        stretch
+      />
+    </section>
+  </AgendaSection>
+  <AgendaSection header="Full Code">
+    <section>
+      <Code
+        code={snippets["[post-fetch].astro"]}
+        language="js"
+        startFrom="1"
+        stretch
+      />
+    </section>
+  </AgendaSection>
+  <AgendaSection header="<code>filter</code>">
+    <section>
+      <p>
+        In JS, we can filter arrays, leaving us with an array that only contains
+        stuff matching our "desires"
+      </p>
+    </section>
+
+    <section data-auto-animate>
+      <Code code={snippets["filter1.js"]} language="js" />
+      <p class="fragment">Give me all birds</p>
+      <div class="fragment">
+        <Code code={snippets["filter2.js"]} language="js" />
+      </div>
+    </section>
+    <section data-auto-animate>
+      <p>Give me all birds</p>
+      <Code code={snippets["filter2.js"]} language="js" />
+      <Code code={snippets["filter3.js"]} language="js" />
+    </section>
+    <section data-auto-animate>
+      <Code dataId="filterSteps" code={snippets["filter4.js"]} language="js" />
+    </section>
+    <section data-auto-animate>
+      <Code dataId="filterSteps" code={snippets["filter5.js"]} language="js" />
+    </section>
+    <section data-auto-animate>
+      <Code dataId="filterSteps" code={snippets["filter6.js"]} language="js" />
+    </section>
+  </AgendaSection>
+
+  <AgendaSection header="Let's make it work">
+    <section>
+      <CompletionTracker
+        position="relative"
+        slug="t8-4-data-ex-1"
+        client:visible
+        title="Together"
+      />
+
+      <CompletionTracker
+        title="Demonstrated (and recorded)"
+        position="relative"
+        slug="t8-4-data-ex-2"
+        client:visible
+      />
+      <p>
+        <a href="https://github.com/jonasholbech/s23members"
+          >https://github.com/jonasholbech/s23members</a>
+      </p>
+    </section>
+  </AgendaSection>
+</SlideLayout>
+
+<!--
+
+  <Code
+        code={snippets["First.astro"]}
+        language="js"
+        startFrom="1"
+        lineNumbers="1-2|1-5|7|9-11|13-15"
+        stretch
+      />
+ -->

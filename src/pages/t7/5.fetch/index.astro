@@ -1,0 +1,329 @@
+---
+import SlideLayout from "../../../layouts/SlideLayout.astro";
+import codeFetcher from "../../../js/codeFetcher";
+import Code from "../../../components/Code.astro";
+import AgendaSection from "../../../components/AgendaSection.astro";
+import Goal from "../../../components/Goal.astro";
+const snippets = await codeFetcher("t7/5.fetch-arrays-and-foreach", [
+  "full-fetch.js",
+  "minimal-fetch.js",
+  "fetches6.js",
+  "callbacks-simple.js",
+  "callbacks-simple-2.js",
+  "callbacks-simple-3.js",
+  "callbacks-simple-4.js",
+  "callbacks-simple-5.js",
+  "arrays-intro.js",
+  "array-objects.js",
+  "arrays-zero-index.js",
+  "arrays-foreach.js",
+  "arrays-foreach2.js",
+  "array-foreach-template.js",
+  "fetch-in-steps-part-1.js",
+  "fetch-in-steps-part-2.js",
+  "fetch-in-steps-part-3.js",
+  "fetch-in-steps-part-4.js",
+  "fetch-in-steps-part-5.js",
+  "fetch-in-steps-part-6.js",
+  "fetch-in-steps-part-7.js",
+  "async-fetch-in-steps-part-1.js",
+  "async-fetch-in-steps-part-2.js", //er reelt ikke nummer 2, //TODO:
+  "async-fetch-in-steps-part-3.js",
+  "async-fetch-in-steps-part-4.js",
+  "async-fetch-in-steps-part-5.js",
+  "async-fetch-in-steps-part-6.js",
+  "async-fetch-in-steps-part-7.js",
+  "async-fetch-in-steps-part-8.js",
+]);
+---
+
+<SlideLayout title="fetch">
+  <section>
+    <h1><code>fetch</code></h1>
+  </section>
+
+  <section>
+    <Goal>
+      <ol>
+        <li>Understand the need for <code>fetch</code></li>
+        <li>and knowing what to change in the fetch-code</li>
+      </ol>
+    </Goal>
+  </section>
+
+  <AgendaSection header="<code>fetch</code>">
+    <section>
+      <h1>One slide to rule them all</h1>
+      <p class="fragment">Ready?</p>
+    </section>
+    <section>
+      <p>This is the full, advanced version</p>
+      <Code code={snippets["full-fetch.js"]} stretch />
+
+      <p>We probably won't get there</p>
+    </section>
+    <section>
+      <Code code={snippets["minimal-fetch.js"]} stretch />
+      <p>We will end around here</p>
+    </section>
+  </AgendaSection>
+
+  <section>
+    <section>
+      <h1>AJAX</h1>
+      <h3>A synchronous JavaScript and XML</h3>
+    </section>
+    <section>
+      <blockquote>
+        AJAX allows web pages to be updated asynchronously by exchanging data
+        with a web server behind the scenes. This means that it is possible to
+        update parts of a web page, without reloading the whole page.
+      </blockquote>
+    </section>
+    <section>
+      <h3>AJAX - the developer's dream</h3>
+      <p>because you can:</p>
+      <ul>
+        <li>Update a web page without reloading the page.</li>
+        <li>Request data from a server after the page has loaded.</li>
+        <li>Receive data from a server after the page has loaded.</li>
+        <li>Send data to a server in the background.</li>
+      </ul>
+      <p>
+        Think Facebook / Google docs / auto complete / any website with snappy
+        UI / UX basically
+      </p>
+    </section>
+    <section>
+      <p>So, how does clients &amp; servers actually talk?</p>
+      <img
+        data-src="/assets/t7/5.fetch-arrays-and-foreach/client-server.png"
+        alt=""
+      />
+      <p>What is a</p>
+      <ol>
+        <li>Client</li>
+        <li>Server</li>
+        <li>Response header</li>
+      </ol>
+    </section>
+  </section>
+
+  <AgendaSection header="(Too) many ways to use a callback">
+    <section>
+      <p>What is a callback?</p>
+    </section>
+    <section data-auto-animate>
+      <p>Let's start simple</p>
+      <Code dataId="fetch" code={snippets["callbacks-simple.js"]} stretch />
+    </section>
+    <section data-auto-animate>
+      <p>We can do it without creating a variable for the button</p>
+      <Code dataId="fetch" code={snippets["callbacks-simple-2.js"]} stretch />
+    </section>
+    <section data-auto-animate>
+      <p>We can define the function directly in the callback</p>
+      <Code dataId="fetch" code={snippets["callbacks-simple-3.js"]} stretch />
+    </section>
+    <section data-auto-animate>
+      <p>When used like that, we don't need the name</p>
+      <Code dataId="fetch" code={snippets["callbacks-simple-4.js"]} stretch />
+    </section>
+    <section data-auto-animate>
+      <p>And since "ES6" we can use arrow functions</p>
+      <Code dataId="fetch" code={snippets["callbacks-simple-5.js"]} stretch />
+    </section>
+  </AgendaSection>
+
+  <AgendaSection header="AJAX in action - <code>fetch</code>">
+    <section>
+      <h3><code>fetch</code></h3>
+      <p><code>fetch</code> is one of the ways we can work with AJAX in JS</p>
+      <p>It is the easiest, if we can accept a bit of "black boxing"</p>
+    </section>
+    <section>
+      <p>The process could be worse</p>
+      <ol>
+        <li>We send a request for something</li>
+        <li>We get a response (headers)</li>
+        <li>We extract the JSON from the response</li>
+        <li>We get the data</li>
+      </ol>
+      <p>(if all goes well)</p>
+    </section>
+    <section>
+      <h3>I promise you something</h3>
+      <p>The hard part comes as the process is asynchronous</p>
+      <p>It can take time before we get the response</p>
+      <p>It can take time before we get the JSON out</p>
+      <p>Which gives us a new syntax to learn</p>
+      <p>And one new syntax to see</p>
+    </section>
+  </AgendaSection>
+  <AgendaSection header="<code>fetch</code> - then, then">
+    <section data-auto-animate>
+      <h3>The syntax</h3>
+      <Code
+        dataId="fetch-in-steps"
+        code={snippets["fetch-in-steps-part-1.js"]}
+      />
+      <p>We specifify what url to grab</p>
+    </section>
+    <section data-auto-animate>
+      <h3>The syntax</h3>
+      <Code
+        dataId="fetch-in-steps"
+        code={snippets["fetch-in-steps-part-2.js"]}
+        stretch
+      />
+      <p>Once we get the "headers", we pull out the JSON</p>
+    </section>
+    <section data-auto-animate>
+      <h3>The syntax</h3>
+      <Code
+        dataId="fetch-in-steps"
+        code={snippets["fetch-in-steps-part-3.js"]}
+        stretch
+      />
+      <p>and THEN we get the data</p>
+      <p>Now our code actually works, but...</p>
+    </section>
+    <section data-auto-animate>
+      <h3>The syntax</h3>
+      <Code
+        dataId="fetch-in-steps"
+        code={snippets["fetch-in-steps-part-4.js"]}
+        stretch
+      />
+      <p>
+        Since we won't need <code>headersReceived</code> anywhere else, we CAN move
+        it up
+      </p>
+    </section>
+    <section data-auto-animate>
+      <h3>The syntax</h3>
+      <Code
+        dataId="fetch-in-steps"
+        code={snippets["fetch-in-steps-part-5.js"]}
+        stretch
+      />
+      <p>
+        And just to confuse everyone, we do not need the name for the function
+      </p>
+    </section>
+    <section data-auto-animate>
+      <h3>The syntax</h3>
+      <Code
+        dataId="fetch-in-steps"
+        code={snippets["fetch-in-steps-part-6.js"]}
+        stretch
+      />
+      <p>And why not turn it into an arrow function?</p>
+    </section>
+    <section data-auto-animate>
+      <h3>The syntax</h3>
+      <Code
+        dataId="fetch-in-steps"
+        code={snippets["fetch-in-steps-part-7.js"]}
+        stretch
+      />
+      <p>And why not use an implicit return?</p>
+      <p class="fragment">Don't worry, this is just crazy for now</p>
+    </section>
+  </AgendaSection>
+
+  <AgendaSection header="<code>fetch</code> - async / await">
+    <section data-auto-animate>
+      <h3>The syntax</h3>
+      <Code
+        dataId="fetch-in-steps"
+        code={snippets["async-fetch-in-steps-part-1.js"]}
+      />
+      <p>We create a function to fetch the data</p>
+    </section>
+    <section data-auto-animate>
+      <h3>The syntax</h3>
+      <Code
+        dataId="fetch-in-steps"
+        code={snippets["async-fetch-in-steps-part-3.js"]}
+        stretch
+      />
+      <p>The we run the actual request</p>
+    </section>
+    <section data-auto-animate>
+      <h3>The syntax</h3>
+      <Code
+        dataId="fetch-in-steps"
+        code={snippets["async-fetch-in-steps-part-4.js"]}
+        stretch
+      />
+      <p>Which we have to store somewhere</p>
+    </section>
+    <section data-auto-animate>
+      <h3>The syntax</h3>
+      <Code
+        dataId="fetch-in-steps"
+        code={snippets["async-fetch-in-steps-part-5.js"]}
+        stretch
+      />
+      <p>
+        That request will complete "later", we have to tell JS to <code
+          >await</code
+        > for it
+      </p>
+    </section>
+    <section data-auto-animate>
+      <h3>The syntax</h3>
+      <Code
+        dataId="fetch-in-steps"
+        code={snippets["async-fetch-in-steps-part-2.js"]}
+        stretch
+      />
+      <p>Since the function is asynchronous, we have to tell JS</p>
+    </section>
+    <section data-auto-animate>
+      <h3>The syntax</h3>
+      <Code
+        dataId="fetch-in-steps"
+        code={snippets["async-fetch-in-steps-part-6.js"]}
+        stretch
+      />
+      <p>The response contains our JSON, so we pull it out and store it</p>
+    </section>
+    <section data-auto-animate>
+      <h3>The syntax</h3>
+      <Code
+        dataId="fetch-in-steps"
+        code={snippets["async-fetch-in-steps-part-7.js"]}
+        stretch
+      />
+      <p>But that takes time, so we have to <code>await</code></p>
+    </section>
+    <section data-auto-animate>
+      <h3>The syntax</h3>
+      <Code
+        dataId="fetch-in-steps"
+        code={snippets["async-fetch-in-steps-part-8.js"]}
+        stretch
+      />
+      <p>and THEN we have our data</p>
+    </section>
+  </AgendaSection>
+  <AgendaSection header="Black Boxing">
+    <section data-auto-animate>
+      <p class="fragment">
+        CPM<span class="fragment">: Copy-Paste-Moment</span>
+      </p>
+      <p class="fragment">Should you be able to write this?</p>
+      <p class="fragment">Or just know what to change?</p>
+      <p class="fragment">What should change?</p>
+      <div class="fragment">
+        <Code
+          dataId="fetch-in-steps"
+          code={snippets["fetch-in-steps-part-7.js"]}
+          stretch
+        />
+      </div>
+    </section>
+  </AgendaSection>
+</SlideLayout>

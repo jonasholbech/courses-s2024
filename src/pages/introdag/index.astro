@@ -1,0 +1,226 @@
+---
+import SlideLayout from "../../layouts/SlideLayout.astro";
+import codeFetcher from "../../js/codeFetcher";
+import Code from "../../components/Code.astro";
+import Explainer from "../../components/Explainer.svelte";
+import AgendaSection from "../../components/AgendaSection.astro";
+import Goal from "../../components/Goal.astro";
+const snippets = await codeFetcher("introdag", []);
+---
+
+<SlideLayout title="Introdag for nye medarbejdere">
+  <AgendaSection header="Introdag" p="Jonas Holbech">
+    <section>
+      <h3>Målet for denne session</h3>
+      <ul>
+        <li>Hvad skal jeg snakke om</li>
+        <li>Lidt om mig</li>
+        <li>Hvad er vigtigt</li>
+      </ul>
+    </section>
+    <section>
+      <p>Bestillingen:</p>
+      <blockquote>
+        <p>
+          ...Derfor håber jeg meget, at du er med på at holde ca 20 minutters
+          oplæg om, <span class="fragment highlight-blue">
+            hvad du går op i, i din undervisning, og hvad du lægger særligt vægt
+            på.</span
+          >
+        </p>
+        <p>
+          <small>
+            Det er ikke alle deltagerne (nye kollegaer) der er undervisere, men
+            "vi andre" kan også finde god inspiration i at høre lidt fra
+            underviser-siden, som vi måske ikke har så meget at gøre med til
+            hverdag, men som er kernen i KEA.</small
+          >
+        </p>
+      </blockquote>
+    </section>
+  </AgendaSection>
+  <AgendaSection header="Om mig">
+    <section>
+      <ul>
+        <li>Jonas (Fannikke) Holbech</li>
+        <li><a href="mailto:jofh@kea.dk">jofh@kea.dk</a></li>
+        <li>
+          <a href="https://www.linkedin.com/in/holbech/"
+            >https://www.linkedin.com/in/holbech/</a
+          >
+        </li>
+        <li>Cand. IT</li>
+        <li>Fag-nørd</li>
+        <li>
+          Underviser
+          <ul>
+            <li class="fragment">ITU ⬇️</li>
+            <li class="fragment">RTS / KTS ⬇️</li>
+            <li class="fragment">KEA</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+  </AgendaSection>
+
+  <AgendaSection header="Hvad er vigtigt" h2="I undervisningen">
+    <section>
+      <ul>
+        <li>Fag-faglighed</li>
+        <li>Struktur</li>
+        <li>fag-fællesskaber</li>
+      </ul>
+    </section>
+  </AgendaSection>
+
+  <AgendaSection header="Fag-faglighed">
+    <section>
+      <p>Den dobbelte faglighed</p>
+    </section>
+    <section data-auto-animate>
+      <p>Web udvikler</p>
+      <div
+        data-id="box1"
+        style="background:royalblue; width:0%; height: 100px;"
+      >
+      </div>
+      <p>Underviser</p>
+      <div data-id="box2" style="background:orange; width:0%; height: 100px;">
+      </div>
+    </section>
+    <section data-auto-animate>
+      <p>Web udvikler</p>
+      <div
+        data-id="box1"
+        style="background:royalblue; width:80%; height: 100px;"
+      >
+        80%
+      </div>
+      <p>Underviser</p>
+      <div data-id="box2" style="background:orange; width:20%; height: 100px;">
+        20%
+      </div>
+    </section>
+    <section>
+      <p>Battle stories</p>
+      <p>egen praktik</p>
+    </section>
+  </AgendaSection>
+
+  <AgendaSection header="Struktur">
+    <section>
+      <p>Struktur</p>
+      <p class="fragment">Struktur</p>
+      <p class="fragment">Struktur</p>
+      <p class="fragment">
+        <code
+          >Måske særligt vigtigt for mig da jeg nok ikke er SÅ struktureret</code
+        >
+      </p>
+    </section>
+    <section>
+      <h2>Hilbert Meyer</h2>
+      <p>Tysk didaktiker</p>
+      <p>10 kendetegn på god undervisning</p>
+    </section>
+    <section>
+      <ol>
+        <li>
+          Klar strukturering af undervisningen<br /><small
+            >"Rød tråd", klarhed i opgaverne</small
+          >
+        </li>
+        <li>
+          En betydelig mængde ægte læretid<br /><small
+            >Tiden bruges på læringsrelevante aktiviteter - ikke på praktiske
+            problemer el. lign</small
+          >
+        </li>
+      </ol>
+    </section>
+    <section>
+      <ol start="5">
+        <li>
+          Meningsdannende kommunikation<br /><small>
+            Deltagelse i planlægningen - dialog mellem deltagere og underviser</small
+          >
+        </li>
+        <li value="8">
+          Intelligent træning<br /><small
+            >Bevidstgørelse af læringsstrategier</small
+          >
+          <br />
+          <img
+            class="fragment"
+            data-src="/assets/introdag/goal.webp"
+            style="border: 1px solid orange"
+            alt="Mål eksempel"
+          />
+        </li>
+      </ol>
+    </section>
+  </AgendaSection>
+
+  <AgendaSection h2="fag-fællesskaber">
+    <section>
+      <p>Igangværende forsøg</p>
+    </section>
+
+    <section>
+      <h3>Grundtese</h3>
+      <ol>
+        <li>Programmering er svært</li>
+        <li>Læringskurven er ekstremt stejl</li>
+        <li>Det kan synes uopnåeligt for nye i feltet</li>
+        <li>De studerende er tilbageholdende med at dele</li>
+      </ol>
+    </section>
+    <section>
+      <h3>Pædagogisk / didaktiske forsøg og tanker</h3>
+      <p class="fragment">klasseledelse?</p>
+    </section>
+    <section>
+      <p>Jeg deler kode / I deler kode</p>
+    </section>
+    <section>
+      <p>"Jeg hjælper dig, når du har hjulpet Signe"</p>
+      <p>Q &amp; A på Teams</p>
+      <p><small>Spørg åbent</small></p>
+    </section>
+    <section>
+      <p>Fokus på hvad andre har syntes var svært</p>
+    </section>
+    <section>
+      <p>Fokus på rejsen, ikke kun målet</p>
+      <p class="fragment">
+        <small
+          ><a
+            href="https://hanselminutes.com/880/will-chatgpt-help-them-write-with-john-warner"
+            >Fremragende podcast med John Warner</a
+          >
+        </small>
+      </p>
+    </section>
+    <section>
+      <p>ChatGPT, StackOverflow og internettet generelt</p>
+    </section>
+    <section>
+      <p>Ikke kun oplægsholdere fra industrien</p>
+      <p class="fragment">
+        Oplægsholdere der er 1, 2, 3 eller 4 semestre foran
+      </p>
+    </section>
+    <section>
+      <p>Alumne</p>
+    </section>
+    <section>
+      <img data-src="/assets/introdag/alumne.webp" alt="Alumne" />
+    </section>
+  </AgendaSection>
+  <AgendaSection header="Løse noter" p="til hvis nu">
+    <section>
+      <p>"Design your own exercise"</p>
+      <p>Åbne faget for de studerende, åbne de studerende for faget</p>
+    </section>
+  </AgendaSection>
+</SlideLayout>

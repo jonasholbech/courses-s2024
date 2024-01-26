@@ -1,0 +1,54 @@
+---
+import SlideLayout from "../../../layouts/SlideLayout.astro";
+import codeFetcher from "../../../js/codeFetcher";
+import Code from "../../../components/Code.astro";
+import AgendaSection from "../../../components/AgendaSection.astro";
+import Goal from "../../../components/Goal.astro";
+
+const snippets = await codeFetcher("t7/7.status", []);
+---
+
+<SlideLayout title="Status">
+  <section>
+    <h1>Status</h1>
+    <h3>jofh@kea.dk</h3>
+  </section>
+  <section>
+    <Goal>
+      <ol>
+        <li>Experiment with fetch, objects, templates and arrays</li>
+      </ol>
+    </Goal>
+  </section>
+
+  <AgendaSection header="Exercise" p={'Fronter: "Mig som superhelt"'} />
+  <AgendaSection header="Exercise" p={"Udfyld huller"} />
+  <AgendaSection header="Exercise" p={'Fronter: "Superhelte listen"'}>
+    <section>
+      <h2>Bonus exercise</h2>
+      <p>Aren't you lucky</p>
+      <ul>
+        <li>
+          If you forked before you cloned you can now <var
+            >add =&gt; commit =&gt; push</var
+          > directly
+        </li>
+        <li>DO IT</li>
+        <li>Since it's now YOUR repository, we can turn on GitHub Pages</li>
+        <li>
+          <a href="https://youtu.be/DSfIkMgDUo0"
+            >Follow the instructions in this link</a
+          >
+        </li>
+      </ul>
+    </section>
+  </AgendaSection>
+  <AgendaSection header="Introduktion til API'et">
+    <section>
+      <p>
+        <a href="https://kea-alt-del.dk/t7/api/"
+          >https://kea-alt-del.dk/t7/api/</a>
+      </p>
+    </section>
+  </AgendaSection>
+</SlideLayout>

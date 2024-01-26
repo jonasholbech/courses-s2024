@@ -1,0 +1,7 @@
+---
+//could also use
+//const { header } = Astro.props
+---
+<article>
+    <h2>{Astro.props.header}</h2>
+</article>

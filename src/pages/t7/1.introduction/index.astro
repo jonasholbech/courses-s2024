@@ -1,0 +1,196 @@
+---
+import SlideLayout from "../../../layouts/SlideLayout.astro";
+import SlideControls from "../../../components/SlideControls.astro";
+import codeFetcher from "../../../js/codeFetcher";
+import Code from "../../../components/Code.astro";
+
+const snippets = await codeFetcher("t7/1.introduction", [
+  "jonas.js",
+  "peter.js",
+  "stine.js",
+]);
+---
+
+<SlideLayout title="Introduction">
+  <section>
+    <h1>Web II</h1>
+    <h2>S2023</h2>
+  </section>
+
+  <section>
+    <section>
+      <SlideControls />
+    </section>
+  </section>
+
+  <section>
+    <section>
+      <h1>Danglish</h1>
+    </section>
+    <section>
+      <p>Mine slides kommer til at være et mix mellem dansk og engelsk</p>
+      <ol class="fragment">
+        <li>Jeg har undervist på engelsk i syv år</li>
+        <li>Arbejdssproget ER engelsk</li>
+        <li>Alle fagtermer er engelske</li>
+        <li>
+          Når i skal søge hjælp vedrørende HTML, CSS &amp; JS er det på engelsk
+        </li>
+        <li>Vi skal kunne de rigtige termer</li>
+      </ol>
+    </section>
+  </section>
+
+  <section>
+    <h3><code>about</code></h3>
+    <ul>
+      <li><code>about.tutors</code></li>
+      <li><code>about.theSemester</code></li>
+      <li><code>about.theTheme</code></li>
+      <li><code>about.theModules</code></li>
+      <li><code>about.us</code></li>
+    </ul>
+  </section>
+
+  <section>
+    <h3><code>about.tutors</code></h3>
+    <p>Tutorerne er til stede hver onsdag, 9-16</p>
+    <ul>
+      <li>Ud for A360</li>
+      <li>
+        og på <a
+          href="https://teams.microsoft.com/l/team/19%3abea3533f661642c687ae08dffb4d3c5d%40thread.tacv2/conversations?groupId=8f66e5c0-632d-454b-9672-d4269568f2c0&tenantId=d10c3c6e-c228-4944-8b6a-6067c6afe3c9"
+          >Teams</a
+        >
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h3><code>about.theSemester</code></h3>
+    <ul>
+      <li class="fragment">
+        3 temaer
+        <ol>
+          <li class="fragment">Web II</li>
+          <li class="fragment">UI/IX II</li>
+          <li class="fragment">Content II</li>
+        </ol>
+      </li>
+      <li class="fragment">
+        Hvert tema peger mod et valgfag
+        <ol>
+          <li class="fragment">Frontend</li>
+          <li class="fragment">Digital Design</li>
+          <li class="fragment">DBCM</li>
+        </ol>
+      </li>
+      <li class="fragment">Men så simpelt er det ikke</li>
+    </ul>
+  </section>
+  <section>
+    <h3><code>about.theTheme</code></h3>
+    <p>4 uger</p>
+
+    <blockquote>
+      Temaet handler om at lave dynamiske, bruger-centrerede sites. Hvor i
+      tidligere har lavet statiske sites, skal vi nu hente indhold fra en
+      database. Dvs at vi ved at bruge 3 HTML sider og en bunke JavaScript kan
+      vise et uendeligt antal sider!
+    </blockquote>
+  </section>
+  <section>
+    <section>
+      <h2><code>about.theModules</code></h2>
+    </section>
+    <section>
+      <h4>De første to uger (modul 1)</h4>
+      <ul>
+        <li>JavaScript &amp; API's</li>
+        <li>Individuel</li>
+      </ul>
+      <blockquote>Lær om JavaScript og Git gennem en eksempel-case</blockquote>
+    </section>
+    <section>
+      <img
+        data-src="https://media.tenor.com/tv3Yr2A2I4kAAAAd/nerd-ackchyually.gif"
+      />
+      <p class="fragment">
+        <small>(Vi skal faktisk bygge en side med 44.000 produkter)</small>
+      </p>
+      <p class="fragment">
+        <small>Lad os prøve at tegne det</small>
+      </p>
+    </section>
+    <section>
+      <h4>Uge 3 og 4 (modul 2)</h4>
+      <ul>
+        <li>Teamwork</li>
+        <li>Same procedure, med jeres egen database og data</li>
+      </ul>
+    </section>
+  </section>
+  <section>
+    <section>
+      <h1><code>about.us</code></h1>
+    </section>
+
+    <section>
+      <h3><code>about.jonas</code></h3>
+      <Code code={snippets["jonas.js"]} language="js" />
+    </section>
+    <section>
+      <h3><code>about.stine</code></h3>
+      <Code code={snippets["stine.js"]} language="js" />
+    </section>
+    <section>
+      <h3><code>about.peter</code></h3>
+      <Code code={snippets["peter.js"]} language="js" />
+    </section>
+  </section>
+
+  <section>
+    <h2>
+      <a
+        href="https://kea-fronter.itslearning.com/TreeLinks/TreeLinks/Index/e549aac1-ddb4-4589-9fe0-b4c58e19d0f3?sourceElementId=1091041&showContent=False"
+        >Theme Description</a
+      >
+    </h2>
+  </section>
+  <section>
+    <section>
+      <h2>Introduktion til opgaven</h2>
+    </section>
+    <section>
+      <h2>The elephant in the room</h2>
+      <p class="fragment"><code>JS</code></p>
+      <p class="fragment">How bad is it?</p>
+      <p class="fragment"><var>Git</var></p>
+      <p class="fragment">How bad is it?</p>
+    </section>
+    <section>
+      <h3>Maybe a brief talk about what it means to learn something?</h3>
+      <p class="fragment">How do kids learn to talk?</p>
+      <p class="fragment">"If Google goes down, I am no longer a developer"</p>
+      <p class="fragment">
+        <a href="https://chat.openai.com/chat">https://chat.openai.com/chat</a>
+      </p>
+    </section>
+    <section>
+      <p>Let's look at the</p>
+      <ol>
+        <li>Install day (fronter)<br />(including, what is it)</li>
+        <li>JS Recap (fronter)</li>
+        <li>Static Product Assignment (fronter)</li>
+        <li>
+          <a href="https://kea-alt-del.dk/t7/example-site/">Example site</a>
+        </li>
+        <li>
+          The database (<a href="https://kea-alt-del.dk/t7/api/sample">Sample</a
+          >)
+        </li>
+        <li>and talk about filters/categories</li>
+      </ol>
+    </section>
+  </section>
+</SlideLayout>

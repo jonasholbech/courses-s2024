@@ -1,0 +1,125 @@
+---
+import SlideLayout from "../../../layouts/SlideLayout.astro";
+import codeFetcher from "../../../js/codeFetcher";
+import Code from "../../../components/Code.astro";
+import AgendaSection from "../../../components/AgendaSection.astro";
+import Goal from "../../../components/Goal.astro";
+const snippets = await codeFetcher("t7/5.fetch-arrays-and-foreach", [
+  "full-fetch.js",
+  "minimal-fetch.js",
+  "fetches6.js",
+  "callbacks-simple.js",
+  "callbacks-simple-2.js",
+  "callbacks-simple-3.js",
+  "callbacks-simple-4.js",
+  "callbacks-simple-5.js",
+  "arrays-intro.js",
+  "array-objects.js",
+  "arrays-zero-index.js",
+  "arrays-foreach.js",
+  "arrays-foreach2.js",
+  "array-foreach-template.js",
+  "fetch-in-steps-part-1.js",
+  "fetch-in-steps-part-2.js",
+  "fetch-in-steps-part-3.js",
+  "fetch-in-steps-part-4.js",
+  "fetch-in-steps-part-5.js",
+  "fetch-in-steps-part-6.js",
+  "fetch-in-steps-part-7.js",
+  "async-fetch-in-steps-part-1.js",
+  "async-fetch-in-steps-part-2.js", //er reelt ikke nummer 2, //TODO:
+  "async-fetch-in-steps-part-3.js",
+  "async-fetch-in-steps-part-4.js",
+  "async-fetch-in-steps-part-5.js",
+  "async-fetch-in-steps-part-6.js",
+  "async-fetch-in-steps-part-7.js",
+  "async-fetch-in-steps-part-8.js",
+]);
+---
+
+<SlideLayout title="JSON">
+  <section>
+    <section>
+      <h1>JSON</h1>
+    </section>
+  </section>
+
+  <section>
+    <Goal>
+      <ol>
+        <li>A basic Understanding of what JSON is</li>
+      </ol>
+    </Goal>
+  </section>
+
+  <AgendaSection header="JSON">
+    <section>
+      <ul>
+        <li>JSON is a syntax for storing and exchanging data.</li>
+        <li>JSON is text written with JavaScript Object Notation.</li>
+        <li>Used to send data between different API's</li>
+        <li>
+          We can convert any JavaScript object into JSON, and send JSON to the
+          server.
+        </li>
+        <li>
+          We can also convert any JSON received from a server into JavaScript
+          objects.
+        </li>
+      </ul>
+    </section>
+    <section class="small">
+      <h3>JSON Syntax Rules</h3>
+      <ul>
+        <li>
+          JSON syntax is derived from JavaScript object notation
+          <ul>
+            <li>Data is in name/value pairs</li>
+            <li>Data is separated by commas</li>
+            <li>Curly braces hold objects</li>
+            <li>Square brackets hold arrays</li>
+          </ul>
+        </li>
+        <li>
+          A name/value pair consists of a field name (in double quotes),
+          followed by a colon, followed by a value:<br />
+          <pre><code>{`{ "name": "Jonas" }`}</code></pre>
+        </li>
+        <li>
+          In JSON, keys must be strings, written with double quotes!<br />
+          In JavaScript, keys can be strings, numbers, or identifier names:<br
+          />
+          <p><strong>JavaScript</strong></p>
+          <pre><code>{`{ name: "Jonas" }`}</code></pre>
+          <p><strong>JSON</strong></p>
+          <pre><code>{`{ "name": "Jonas" }`}</code></pre>
+        </li>
+      </ul>
+    </section>
+    <section class="small">
+      <h3>JSON Syntax Rules</h3>
+      <ul>
+        <li>
+          In JSON, values must be one of the following data types:
+          <ul>
+            <li>a string</li>
+            <li>a number</li>
+            <li>an object (JSON object)</li>
+            <li>an array</li>
+            <li>a boolean</li>
+            <li>null</li>
+          </ul>
+        </li>
+        <li>
+          In JavaScript values can be all of the above, plus any other valid
+          JavaScript expression, including:
+          <ul>
+            <li>a function</li>
+            <li>a date</li>
+            <li>undefined</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+  </AgendaSection>
+</SlideLayout>

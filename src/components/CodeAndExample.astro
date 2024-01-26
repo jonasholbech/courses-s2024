@@ -1,0 +1,24 @@
+---
+import Code from "./Code.astro";
+const { snippets, language, file } = Astro.props;
+---
+
+<fieldset class="preview">
+  <legend>code</legend>
+  <Code code={snippets[file]} language={language} stretch />
+</fieldset>
+<fieldset class="preview">
+  <legend>in the browser</legend>
+  <div set:html={snippets[file].code} />
+</fieldset>
+
+<style>
+  .preview {
+    border: 1px solid #fff;
+    padding: 1rem;
+  }
+  legend {
+    font-size: 1.2rem;
+    color: hotpink;
+  }
+</style>

@@ -1,0 +1,221 @@
+---
+import SlideLayout from "../../../layouts/SlideLayout.astro";
+import codeFetcher from "../../../js/codeFetcher";
+import Code from "../../../components/Code.astro";
+import Goal from "../../../components/Goal.astro";
+import AgendaSection from "../../../components/AgendaSection.astro";
+import CodeAndExample from "../../../components/CodeAndExample.astro";
+const snippets = await codeFetcher("t7/8.forms", [
+  "input-text.html",
+  "input-number.html",
+  "input-checkbox.html",
+  "input-radio.html",
+  "textarea.html",
+  "select.html",
+  "wrong-label.html",
+  "correct-label-1.html",
+  "correct-label-2.html",
+  "input-radio-2.html",
+  "input-checkbox-2.html",
+]);
+---
+
+<SlideLayout title="Forms">
+  <section>
+    <section>
+      <h1>Forms</h1>
+      <h2>And other stuff</h2>
+    </section>
+    <section>
+      <Goal>
+        <ol>
+          <li>Re-cap on forms</li>
+          <li>Validation</li>
+          <li>Semantics</li>
+        </ol>
+      </Goal>
+    </section>
+  </section>
+
+  <AgendaSection header="Forms">
+    <section>
+      <p>The money maker on the web</p>
+    </section>
+  </AgendaSection>
+
+  <AgendaSection header="Rules">
+    <section>
+      <ol>
+        <li>All forms should be wrapped in a &lt;form&gt; &lt;/form&gt; tag</li>
+        <li class="fragment">
+          You can/should have multiple elements in a form
+        </li>
+        <li class="fragment">If needed, you can have multiple forms</li>
+        <li class="fragment">You'll also need a button</li>
+      </ol>
+    </section>
+    <section>
+      <p>All elements in a form must have a "name" attribute</p>
+      <p>Otherwise the form won't work</p>
+      <p>The "name" must be unique within each form (except....)</p>
+    </section>
+    <section>
+      <p>All elements must have a "label"</p>
+      <p class="fragment">More on this later</p>
+    </section>
+  </AgendaSection>
+  <AgendaSection header="Elements">
+    <section>
+      <CodeAndExample
+        snippets={snippets}
+        file="input-text.html"
+        language="html"
+      />
+      <p class="fragment">Used for?</p>
+    </section>
+    <section>
+      <CodeAndExample
+        snippets={snippets}
+        file="input-number.html"
+        language="html"
+      />
+      <p class="fragment">What is a number?</p>
+      <ul>
+        <li class="fragment">age?</li>
+        <li class="fragment">zip?</li>
+        <li class="fragment">phone number?</li>
+        <li class="fragment">number of eggs?</li>
+      </ul>
+    </section>
+    <section>
+      <CodeAndExample
+        snippets={snippets}
+        file="input-checkbox.html"
+        language="html"
+      />
+    </section>
+    <section>
+      <CodeAndExample
+        snippets={snippets}
+        file="input-radio.html"
+        language="html"
+      />
+    </section>
+    <section>
+      <p>Other options</p>
+      <p>type="?"</p>
+      <ul>
+        <li><code>password</code></li>
+        <li><code>email</code></li>
+        <li><code>color</code></li>
+        <li><code>date</code></li>
+        <li><code>tel</code></li>
+        <li><code>button</code></li>
+        <li><code>submit</code></li>
+        <li><code>...</code></li>
+      </ul>
+    </section>
+    <section>
+      <CodeAndExample
+        snippets={snippets}
+        file="textarea.html"
+        language="html"
+      />
+    </section>
+    <section>
+      <CodeAndExample snippets={snippets} file="select.html" language="html" />
+    </section>
+  </AgendaSection>
+  <AgendaSection header="labels">
+    <section data-auto-animate>
+      <p>All elements must have a label</p>
+      <p>Why?</p>
+      <ul>
+        <li class="fragment">SEO</li>
+        <li class="fragment">
+          A11Y <span class="fragment"><small>(Accessibility)</small></span>
+        </li>
+        <li class="fragment">Fat fingers / small targets</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Wrong</h2>
+      <CodeAndExample
+        snippets={snippets}
+        file="wrong-label.html"
+        language="html"
+      />
+      <p class="fragment">
+        What's the problem? <span class="fragment"
+          >(try to click the label)</span
+        >
+      </p>
+    </section>
+    <section>
+      <h2>Correct #1</h2>
+      <CodeAndExample
+        snippets={snippets}
+        file="correct-label-1.html"
+        language="html"
+      />
+    </section>
+    <section>
+      <h2>Correct #2</h2>
+      <CodeAndExample
+        snippets={snippets}
+        file="correct-label-2.html"
+        language="html"
+      />
+    </section>
+  </AgendaSection>
+  <AgendaSection header="Special Elements">
+    <section>
+      <p>
+        The input types <code>checkbox</code> and <code>radio</code> are special
+      </p>
+      <p>They can share a name</p>
+    </section>
+    <section>
+      <CodeAndExample
+        snippets={snippets}
+        file="input-radio-2.html"
+        language="html"
+      />
+    </section>
+    <section>
+      <CodeAndExample
+        snippets={snippets}
+        file="input-checkbox-2.html"
+        language="html"
+      />
+    </section>
+  </AgendaSection>
+  <AgendaSection header="Validation">
+    <section>
+      <p>Validation can be crazy complex, or really simple</p>
+      <p>Let's take the simple one</p>
+      <p>put <code>required</code> on all fields the user has to fill in!</p>
+    </section>
+    <section>
+      <p>Let's build a simple form and try it out</p>
+    </section>
+  </AgendaSection>
+  <AgendaSection header="Netlify">
+    <section>
+      <ol>
+        <li>If you're using GitHub</li>
+        <li>
+          Then you can host it on <a href="https://www.netlify.com/"
+            >https://www.netlify.com/</a
+          >
+        </li>
+        <li>
+          And then we can ask Netlify to store any submissions, <a
+            href="https://docs.netlify.com/forms/setup/"
+            >https://docs.netlify.com/forms/setup/</a
+          >
+        </li>
+      </ol>
+    </section>
+  </AgendaSection>
+</SlideLayout>

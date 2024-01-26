@@ -1,0 +1,204 @@
+---
+import SlideLayout from "../../../layouts/SlideLayout.astro";
+import codeFetcher from "../../../js/codeFetcher";
+import Code from "../../../components/Code.astro";
+import AgendaSection from "../../../components/AgendaSection.astro";
+import Goal from "../../../components/Goal.astro";
+
+const snippets = await codeFetcher("t7/6.templates-and-arrays", [
+  "template.html",
+  "template_content.js",
+  "textcontent-innerhtml.js",
+  "objects-templates.html",
+  "objects-templates.js",
+  "arrays-intro.js",
+  "array-objects.js",
+  "arrays-zero-index.js",
+  "arrays-foreach.js",
+  "arrays-foreach2.js",
+  "array-foreach-template.js",
+]);
+---
+
+<SlideLayout title="Templates, arrays, forEach">
+  <section>
+    <h1>Templates, Arrays &amp; forEach</h1>
+    <h3>jofh@kea.dk</h3>
+  </section>
+  <section>
+    <Goal>
+      <ol>
+        <li>Understand what <code>&lt;template/&gt;</code>'s are</li>
+        <li>Experience how <code>&lt;template/&gt;</code>'s work</li>
+        <li>Know what arrays are</li>
+        <li>Experience playing with arrays</li>
+      </ol>
+    </Goal>
+  </section>
+
+  <section>
+    <section>
+      <h1><code>&lt;template&gt;</code></h1>
+      <p class="flash"></p>
+    </section>
+
+    <section>
+      <blockquote>
+        <p>
+          The HTML template element <code>&lt;template&gt;</code> is a mechanism
+          for holding client-side content that is not to be rendered when a page
+          is loaded but may subsequently be instantiated during runtime using JavaScript.
+        </p>
+        <p class="fragment highlight-blue">
+          Think of a template as a content fragment that is being stored for
+          subsequent use in the document.
+        </p>
+      </blockquote>
+      <p>
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template"
+          >MDN</a
+        >
+      </p>
+    </section>
+
+    <section>
+      <h2><code>&lt;template&gt;'s in html</code></h2>
+      <Code
+        code={snippets["template.html"]}
+        path="t7/6.templates-and-arrays/template.html"
+        language="html"
+        startFrom="1"
+        lineNumbers="3-12"
+        stretch
+      />
+    </section>
+    <section>
+      <h3>Let's try it</h3>
+    </section>
+  </section>
+
+  <section>
+    <section>
+      <h1>Cloning</h1>
+    </section>
+    <section>
+      <h2>Procedure</h2>
+      <ol>
+        <li>Select the <code>&lt;template&gt;</code>'s content</li>
+        <li>Make a "clone / copy"</li>
+        <li>Change the content in the clone</li>
+        <li>Choose the "parent" element</li>
+        <li>Add (Append) the clone to the parent (and thus the DOM)</li>
+      </ol>
+    </section>
+    <section>
+      <Code
+        code={snippets["template_content.js"]}
+        path="t7/6.templates-and-arrays/template_content.js"
+        language="js"
+        startFrom="1"
+        lineNumbers="1-2|4-5|7-8|11-12|14-15|1-15"
+        stretch
+      />
+    </section>
+    <section>
+      <h3>Let's try it</h3>
+    </section>
+  </section>
+
+  <section>
+    <section>
+      <h1>Objects &amp; the <code>&lt;template&gt;</code></h1>
+    </section>
+    <section>
+      <p>
+        Combining <code>object</code>'s with the <code>&lt;template&gt;</code> is
+        easy (if we understood <code>&lt;template&gt;</code>'s the first time)
+      </p>
+      <Code
+        code={snippets["objects-templates.html"]}
+        path="t7/6.templates-and-arrays/objects-templates.html"
+        language="html"
+      />
+      <Code
+        code={snippets["objects-templates.js"]}
+        path="t7/6.templates-and-arrays/objects-templates.js"
+        language="js"
+      />
+    </section>
+  </section>
+
+  <section>
+    <section>
+      <h1><code>arrays</code> &amp; <code>forEach</code></h1>
+    </section>
+    <section>
+      <p>
+        An array is a special variable, which can hold more than one value at a
+        time.
+      </p>
+    </section>
+    <section>
+      <h4>Declaring arrays</h4>
+      <Code code={snippets["arrays-intro.js"]} />
+    </section>
+    <section>
+      <h4>Declaring arrays, advanced</h4>
+      <Code code={snippets["array-objects.js"]} />
+    </section>
+    <section>
+      <h4>Using arrays</h4>
+      <p>We access arrays using a "zero based index"</p>
+      <Code code={snippets["arrays-zero-index.js"]} />
+    </section>
+
+    <section>
+      <h4>Using arrays</h4>
+      <p>or by "looping" through them one at a time</p>
+      <Code code={snippets["arrays-foreach.js"]} />
+    </section>
+
+    <section>
+      <p>
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach"
+          >developer.mozilla.org/.../Array/forEach</a
+        >
+      </p>
+      <p>Other syntaxes exists</p>
+    </section>
+
+    <section>
+      <p>What if it was an array of objects?</p>
+      <p>Easy, peasy</p>
+      <Code code={snippets["arrays-foreach2.js"]} stretch />
+    </section>
+  </section>
+
+  <AgendaSection header="Arrays, Objects & the <code>template</code>">
+    <section>
+      <p>We have all the pieces</p>
+      <ol>
+        <li>Create a template</li>
+        <li>Loop through the data</li>
+        <li>
+          <code>forEach</code> item in the data:
+          <ol>
+            <li>Grab the template</li>
+            <li>clone the template</li>
+            <li>change some content</li>
+            <li>grap the parent</li>
+            <li>append the clone</li>
+          </ol>
+        </li>
+      </ol>
+    </section>
+    <section>
+      <Code code={snippets["array-foreach-template.js"]} stretch />
+    </section>
+    <section>
+      <p>We now go live to our man in the field</p>
+    </section>
+  </AgendaSection>
+</SlideLayout>

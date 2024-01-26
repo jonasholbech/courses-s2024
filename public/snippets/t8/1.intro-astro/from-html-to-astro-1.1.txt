@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    ...
+  </head>
+  <body>
+    <h1>ProductRUs</h1>
+    <header>
+      <nav>
+        <a href="#">Hjem</a>
+        <a href="#">Produkter</a>
+        <a href="#">Om Os</a>
+      </nav>
+    </header>
+    <main>
+      ...
+    </main>
+    <footer>
+      <p>&copy; 2023</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,164 @@
+---
+import SlideLayout from "../../../layouts/SlideLayout.astro";
+import codeFetcher from "../../../js/codeFetcher";
+import Code from "../../../components/Code.astro";
+import Explainer from "../../../components/Explainer.svelte";
+import AgendaSection from "../../../components/AgendaSection.astro";
+import Goal from "../../../components/Goal.astro";
+const snippets = await codeFetcher(
+  "forms-and-frameworks/6.react-crash-course",
+  [
+    "simple-component.jsx", 
+    "simple-component.txt", 
+    "multiple-components1.jsx",
+    "multiple-components2.jsx",
+    "simple-props.jsx", 
+    "simple-props.txt",
+    "props1.jsx", 
+    "props2.jsx",
+    "prop-types.js"
+]
+);
+---
+
+<SlideLayout title="React Crash Course">
+  <AgendaSection header="React Crash Course" />
+  <section>
+    <Goal>
+      <ol>
+        <li>Try out React in it's most simple format</li>
+        <li>Notice similarities to Astro</li>
+        <li>Start building something we can style later</li>
+        <li>Work with Vite</li>
+      </ol>
+    </Goal>
+  </section>
+
+  <AgendaSection header="Warnings">
+    <section>
+      <ol>
+        <li>This is quick 'n dirty</li>
+        <li>I assume you remember something about Astro</li>
+        <li>React does not know how to do subpages (SPA)</li>
+        <li>We will re-cap ALL of this</li>
+        <li>Including WHY we need React</li>
+      </ol>
+    </section>
+  </AgendaSection>
+  <AgendaSection header="Installing">
+    <section>
+      <p><code>npm create vite@latest</code></p>
+      <p>.then(choose React)</p>
+      <p>.then(follow instructions)</p>
+      <p>.then(point VSCode at the right folder)</p>
+    </section>
+  </AgendaSection>
+  <AgendaSection h2="Components">
+    <section>
+      <p>Just like Astro, react works by building a UI through components</p>
+      <p>Unlike Astro, we can have multiple components in a single file</p>
+      <p class="fragment">But for now, let's not</p>
+    </section>
+    <section data-auto-animate>
+      <h4>An Astro component</h4>
+      <Code
+        dataId="astro2react"
+        code={snippets["simple-component.txt"]}
+        language="html"
+      />
+      <p>Do we remember this?</p>
+    </section>
+    <section data-auto-animate>
+      <h4>A React component</h4>
+      <Code dataId="astro2react" code={snippets["simple-component.jsx"]} />
+      <p>Notice anything odd?</p>
+    </section>
+    <section>
+      <h4>A React component</h4>
+      <Code code={snippets["simple-component.jsx"]} />
+      <p>
+        <span>.jsx</span>
+        <span class="fragment">, className</span>
+        <span class="fragment">, return()</span>
+        <span class="fragment">, export default</span>
+      </p>
+    </section>
+  </AgendaSection>
+  <AgendaSection header="Import / Export">
+    <section>
+        <p>We're used to exporting with</p>
+        <pre><code>export function myFunc(){}</code></pre>
+        <p>And importing with</p>
+        <pre><code>import {"{myFunc}"} from "./myFile.js"</code></pre>
+        <p class="fragment">We can do that in React, but more commonly:</p>
+    </section>
+    <section>
+        <p>We <code>export default</code></p>
+        <pre><code>export default function MyFunc(){}</code></pre>
+        <p>And import with</p>
+        <pre><code>import Whatever from "./MyFile"</code></pre>
+        <p class="fragment">Vite allows us to skip the .jsx extension</p>
+        <p class="fragment">And we can literally call our import <code>Whatever</code></p>
+    </section>
+    <section>
+        <h4>So a full example</h4>
+        <Code  code={snippets["multiple-components1.jsx"]} />
+        <Code  code={snippets["multiple-components2.jsx"]} />
+    </section>
+  </AgendaSection>
+  <AgendaSection header="Props">
+    <section>
+        <p>Remember <code>props</code>?</p>
+        <p>Props were those variables that we passed from a parent component to a child component</p>
+    </section>
+    <section data-auto-animate>
+        <h4>In Astro</h4>
+        <Code
+          dataId="astro2react2"
+          code={snippets["simple-props.txt"]}
+          language="html"
+        />
+        
+      </section>
+      <section data-auto-animate>
+        <h4>In React</h4>
+        <Code dataId="astro2react2" code={snippets["simple-props.jsx"]} />
+      </section>
+
+      <section>
+        <h4>Props example</h4>
+        <Code code={snippets["props1.jsx"]} />
+        <Code code={snippets["props2.jsx"]} />
+      </section>
+  </AgendaSection>
+  <AgendaSection header="Basic Styling">
+    <section>
+        <p>Styling in React CAN be as we're used to</p>
+        <p><code>App.jsx</code> imports <code>App.css</code> and we go from there</p>
+        <p>Just remember kids; it's <code>className</code> not <code>class</code></p>
+    </section>
+  </AgendaSection>
+  <AgendaSection header="Prop-types">
+    <section>
+      <h3>Sick of the prop types warning?</h3>
+      <p>Add this to <kbd>.eslintrc.cjs</kbd></p>
+      <Code
+        code={snippets["prop-types.js"]}
+        language="js"
+      />
+    </section>
+  </AgendaSection>
+  <AgendaSection header="Let's play" />
+  <AgendaSection header="Wednesday">
+    <section>
+        <p>We won't be there!</p>
+        <p>Your task:</p>
+        <p><a href="https://tailwindui.com/components/application-ui/feedback/empty-states#component-e922fb5bee61af99a8db767e70aa31c8">..... (click me) .....</a></p>
+        <p>Just build the components</p>
+        <p>No styling required</p>
+        <p>But make sure you get: components, props, import, and play a bit with styles anyways</p>   
+        <p>Help each other on Teams if you're stuck</p>
+    </section>
+  </AgendaSection>
+  <AgendaSection header="Let's revisit the goals" />
+</SlideLayout>
