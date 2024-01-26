@@ -8,6 +8,10 @@ import Code from "../../components/Code.astro";
 import SlideControls from "../../components/SlideControls.astro";
 
 const snippets = await codeFetcher("react/5.pagination", []);
+import { Image } from "astro:assets";
+import meme1 from "./meme1.jpg";
+import meme2 from "./meme2.jpg";
+import meme3 from "./meme3.jpg";
 ---
 
 <SlideLayout title="Frontend Design, Intro">
@@ -21,11 +25,8 @@ const snippets = await codeFetcher("react/5.pagination", []);
   </section>
 
   <section data-auto-animate>
-    <h2>4 undervisere</h2>
+    <h2>3 undervisere</h2>
     <ol>
-      <li>
-        Peter <span class="highlight-specialty">"The Designer"</span> Tolstrup (ptoa)
-      </li>
       <li>
         Klaus <span class="highlight-specialty">"Vanilla"</span> Mandal (klmh)
       </li>
@@ -53,9 +54,6 @@ const snippets = await codeFetcher("react/5.pagination", []);
   <section data-auto-animate>
     <h2>2. tema</h2>
     <ol>
-      <li>
-        Peter <span class="highlight-specialty">"The Designer"</span> Tolstrup (ptoa)
-      </li>
       <li>
         Dannie <span class="highlight-specialty">"The CSS guy"</span> Vinther (davi)
       </li>
@@ -176,18 +174,12 @@ const snippets = await codeFetcher("react/5.pagination", []);
           Teksnisk set kan du bare aflevere når du afleverer dit eksamensprojekt
           <ul><li>MEN LAD VÆRE!!!!!</li></ul>
         </li>
-        <li>Der er 3 BF'ere</li>
       </ul>
     </section>
   </section>
   <section>
     <section>
-      <h2>
-        <a
-          href="https://kea-fronter.itslearning.com/ContentArea/ContentArea.aspx?LocationID=6161&LocationType=1"
-          >Ugeplanen</a
-        >
-      </h2>
+      <h2>Ugeplanen</h2>
     </section>
     <section>
       <ul>
@@ -202,12 +194,7 @@ const snippets = await codeFetcher("react/5.pagination", []);
   </section>
 
   <section>
-    <h2>
-      <a
-        href="https://teams.microsoft.com/l/team/19%3a8UJVsYUx8JMoE68RB9-BTG7jpPoZiGeb_RUjkCatgGw1%40thread.tacv2/conversations?groupId=c20205cc-7d1a-41b4-9d11-a565bed66d18&tenantId=d10c3c6e-c228-4944-8b6a-6067c6afe3c9"
-        >Vores Teams Rum</a
-      >
-    </h2>
+    <h2>Vores Teams Rum</h2>
   </section>
   <section>
     <h2>
@@ -326,6 +313,25 @@ const snippets = await codeFetcher("react/5.pagination", []);
       <p>det lærer du ikke hvis du får den leveret</p>
       <p class="fragment">tror jeg nok</p>
     </section>
+  </section>
+  <section>
+    <Image src={meme1} alt="" width={700} />
+  </section>
+  <section>
+    <Image
+      src={meme2}
+      alt=""
+      width={500}
+      style="transform: translateY(-200px)"
+    />
+  </section>
+  <section>
+    <Image
+      src={meme3}
+      alt=""
+      width={400}
+      style="transform: translateY(-200px)"
+    />
   </section>
   <section>
     <p>Og en besked fra sidste semester:</p>
