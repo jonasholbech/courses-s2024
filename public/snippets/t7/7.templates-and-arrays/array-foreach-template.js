@@ -1,10 +1,10 @@
 const items = [
   {
     name: "Jonas",
-    pets: 6,
+    pets: 2,
   },
   {
-    name: "Martin",
+    name: "Peter",
     pets: 0,
   },
 ];
