@@ -5,7 +5,8 @@ import Code from "../../../components/Code.astro";
 import AgendaSection from "../../../components/AgendaSection.astro";
 import Goal from "../../../components/Goal.astro";
 
-const snippets = await codeFetcher("t7/6.templates-and-arrays", [
+//TODO: lots of files not needed
+const snippets = await codeFetcher("t7/7.templates-and-arrays", [
   "template.html",
   "template_content.js",
   "textcontent-innerhtml.js",
@@ -28,105 +29,10 @@ const snippets = await codeFetcher("t7/6.templates-and-arrays", [
   <section>
     <Goal>
       <ol>
-        <li>Understand what <code>&lt;template/&gt;</code>'s are</li>
-        <li>Experience how <code>&lt;template/&gt;</code>'s work</li>
         <li>Know what arrays are</li>
         <li>Experience playing with arrays</li>
       </ol>
     </Goal>
-  </section>
-
-  <section>
-    <section>
-      <h1><code>&lt;template&gt;</code></h1>
-      <p class="flash"></p>
-    </section>
-
-    <section>
-      <blockquote>
-        <p>
-          The HTML template element <code>&lt;template&gt;</code> is a mechanism
-          for holding client-side content that is not to be rendered when a page
-          is loaded but may subsequently be instantiated during runtime using JavaScript.
-        </p>
-        <p class="fragment highlight-blue">
-          Think of a template as a content fragment that is being stored for
-          subsequent use in the document.
-        </p>
-      </blockquote>
-      <p>
-        <a
-          href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template"
-          >MDN</a
-        >
-      </p>
-    </section>
-
-    <section>
-      <h2><code>&lt;template&gt;'s in html</code></h2>
-      <Code
-        code={snippets["template.html"]}
-        path="t7/6.templates-and-arrays/template.html"
-        language="html"
-        startFrom="1"
-        lineNumbers="3-12"
-        stretch
-      />
-    </section>
-    <section>
-      <h3>Let's try it</h3>
-    </section>
-  </section>
-
-  <section>
-    <section>
-      <h1>Cloning</h1>
-    </section>
-    <section>
-      <h2>Procedure</h2>
-      <ol>
-        <li>Select the <code>&lt;template&gt;</code>'s content</li>
-        <li>Make a "clone / copy"</li>
-        <li>Change the content in the clone</li>
-        <li>Choose the "parent" element</li>
-        <li>Add (Append) the clone to the parent (and thus the DOM)</li>
-      </ol>
-    </section>
-    <section>
-      <Code
-        code={snippets["template_content.js"]}
-        path="t7/6.templates-and-arrays/template_content.js"
-        language="js"
-        startFrom="1"
-        lineNumbers="1-2|4-5|7-8|11-12|14-15|1-15"
-        stretch
-      />
-    </section>
-    <section>
-      <h3>Let's try it</h3>
-    </section>
-  </section>
-
-  <section>
-    <section>
-      <h1>Objects &amp; the <code>&lt;template&gt;</code></h1>
-    </section>
-    <section>
-      <p>
-        Combining <code>object</code>'s with the <code>&lt;template&gt;</code> is
-        easy (if we understood <code>&lt;template&gt;</code>'s the first time)
-      </p>
-      <Code
-        code={snippets["objects-templates.html"]}
-        path="t7/6.templates-and-arrays/objects-templates.html"
-        language="html"
-      />
-      <Code
-        code={snippets["objects-templates.js"]}
-        path="t7/6.templates-and-arrays/objects-templates.js"
-        language="js"
-      />
-    </section>
   </section>
 
   <section>

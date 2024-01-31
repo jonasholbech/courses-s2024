@@ -6,7 +6,7 @@ import Pacman from "./components/Pacman.astro";
 import AgendaSection from "../../../components/AgendaSection.astro";
 import Goal from "../../../components/Goal.astro";
 
-const snippets = await codeFetcher("t7/4.objects", [
+const snippets = await codeFetcher("t7/6.objects", [
   "objects1.js",
   "objects2.js",
   "objects3.js",
@@ -123,7 +123,7 @@ const snippets = await codeFetcher("t7/4.objects", [
       <h3>How do we find ...</h3>
       <Code
         code={snippets["objects3.js"]}
-        path="t7/4.objects/objects3.js"
+        path="t7/6.objects/objects3.js"
         language="js"
         stretch
       />
@@ -141,12 +141,12 @@ const snippets = await codeFetcher("t7/4.objects", [
       </p>
       <Code
         code={snippets["objects-templates.html"]}
-        path="t7/4.objects/objects-templates.html"
+        path="t7/6.objects/objects-templates.html"
         language="html"
       />
       <Code
         code={snippets["objects-templates.js"]}
-        path="t7/4.objects/objects-templates.js"
+        path="t7/6.objects/objects-templates.js"
         language="js"
       />
     </section>
@@ -159,8 +159,5 @@ const snippets = await codeFetcher("t7/4.objects", [
 
   <section>
     <h1>Let's review the goals</h1>
-  </section>
-  <section>
-    <h1>Your 5+</h1>
   </section>
 </SlideLayout>
