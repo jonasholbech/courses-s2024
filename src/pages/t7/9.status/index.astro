@@ -5,7 +5,7 @@ import Code from "../../../components/Code.astro";
 import AgendaSection from "../../../components/AgendaSection.astro";
 import Goal from "../../../components/Goal.astro";
 
-const snippets = await codeFetcher("t7/7.status", []);
+const snippets = await codeFetcher("t7/9.status", []);
 ---
 
 <SlideLayout title="Status">
@@ -22,24 +22,14 @@ const snippets = await codeFetcher("t7/7.status", []);
   </section>
 
   <AgendaSection header="Exercise" p={'Fronter: "Mig som superhelt"'} />
-  <AgendaSection header="Exercise" p={"Udfyld huller"} />
   <AgendaSection header="Exercise" p={'Fronter: "Superhelte listen"'}>
     <section>
       <h2>Bonus exercise</h2>
       <p>Aren't you lucky</p>
       <ul>
-        <li>
-          If you forked before you cloned you can now <var
-            >add =&gt; commit =&gt; push</var
-          > directly
-        </li>
-        <li>DO IT</li>
-        <li>Since it's now YOUR repository, we can turn on GitHub Pages</li>
-        <li>
-          <a href="https://youtu.be/DSfIkMgDUo0"
-            >Follow the instructions in this link</a
-          >
-        </li>
+        <li>If you've been using GitHub, we can turn on GitHub pages!</li>
+        <li>Push to depåloy (put your site live)</li>
+        <li>(Note to self, record this)</li>
       </ul>
     </section>
   </AgendaSection>
@@ -47,8 +37,13 @@ const snippets = await codeFetcher("t7/7.status", []);
     <section>
       <p>
         <a href="https://kea-alt-del.dk/t7/api/"
-          >https://kea-alt-del.dk/t7/api/</a>
+          >https://kea-alt-del.dk/t7/api/</a
+        >
       </p>
     </section>
   </AgendaSection>
+  <AgendaSection
+    header="Exercise"
+    p={'Fronter: "Lav productlist.html, version 1"'}
+  />
 </SlideLayout>
