@@ -5,12 +5,13 @@ import Code from "../../../components/Code.astro";
 import Explainer from "../../../components/Explainer.svelte";
 import AgendaSection from "../../../components/AgendaSection.astro";
 import Goal from "../../../components/Goal.astro";
-const snippets = await codeFetcher("t7/6.conditionally-showing-data", [
+const snippets = await codeFetcher("t7/11.conditionally-showing-data", [
   "if-quiz1.js",
   "if-quiz2.js",
   "if-quiz3.js",
   "discount1.js",
   "discount2.js",
+  "discount3.js",
   "navigationhelpers.js",
   "qs-template.html",
   "qs-template-all.html",
@@ -285,36 +286,38 @@ const snippets = await codeFetcher("t7/6.conditionally-showing-data", [
       <Code code={snippets["if-quiz3.js"]} stretch />
     </section>
     <section>
-      <h2>sample code</h2>
+      <h2>sample code, #1</h2>
       <p>Hide / show depending on data</p>
       <Code code={snippets["discount1.js"]} />
+    </section>
+    <section>
+      <h2>sample code, #2</h2>
       <p>Create an element based on data</p>
       <Code code={snippets["discount2.js"]} />
     </section>
+    <section>
+      <h2>sample code, #3</h2>
+      <p>Remeove an element that's not needed</p>
+      <Code code={snippets["discount3.js"]} />
+    </section>
   </AgendaSection>
 
-  <AgendaSection
-    header="Exercise"
-    p="<code>productlist.html</code>, first iteration"
-  >
+  <AgendaSection header="Supervised work" p="Finish your site">
     <section>
       <ol>
         <li>
           Follow the process in the <a
-            href="https://www.youtube.com/watch?v=VAAjHOw7x_Q&list=PLCx1FpZ4Dtb3YRa97DeuZIjG0fKeQmWNo&index=14"
-            >video</a
+            href="https://www.youtube.com/playlist?list=PLCx1FpZ4Dtb0XmfW8DkCJZ75ICLWtNaHF"
+            >playlist</a
           >
         </li>
         <li>
-          This one will be a little harder than the last time, because our DOM's
-          will be very different
+          See if you can use all the cool methods for navigating the DOM inside
+          your clones
         </li>
         <li>
-          But remember, you can <code>.remove()</code> things in your clone
-        </li>
-        <li>
-          And use all the other cool methods for navigating the DOM inside your
-          clones
+          Remember to remove yourself from the queue if you leave (we made it to
+          the end yesterday)
         </li>
       </ol>
     </section>
