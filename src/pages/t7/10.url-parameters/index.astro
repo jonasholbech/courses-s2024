@@ -2,6 +2,7 @@
 import SlideLayout from "../../../layouts/SlideLayout.astro";
 import codeFetcher from "../../../js/codeFetcher";
 import Code from "../../../components/Code.astro";
+import Goal from "../../../components/Goal.astro";
 import AgendaSection from "../../../components/AgendaSection.astro";
 const snippets = await codeFetcher("t7/10.url-parameters", [
   "urlsearchparams.js",
@@ -10,6 +11,22 @@ const snippets = await codeFetcher("t7/10.url-parameters", [
 ---
 
 <SlideLayout title="URL Parameters">
+  <section>
+    <h1>URL Pareameters</h1>
+    <h3>jofh@kea.dk</h3>
+  </section>
+
+  <section>
+    <Goal>
+      <ol>
+        <li>A basic Understanding of what URL parameters are</li>
+        <li>... what they're used for</li>
+        <li>... how to use them</li>
+        <li>Undertsand the flow we're building</li>
+        <li>Time for working on your sites, in class</li>
+      </ol>
+    </Goal>
+  </section>
   <section>
     <section>
       <h2>URL parameters</h2>
