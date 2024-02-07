@@ -1,4 +1,4 @@
-let shouldSleep = true;
+let shouldSleep = false;
 if (!shouldSleep) {
   //7. ?
   //YES
