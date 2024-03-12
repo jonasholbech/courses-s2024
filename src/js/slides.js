@@ -28,7 +28,7 @@ Reveal.addEventListener("ready", () => {
 //add some animation classes to svg elements in .explanation
 Reveal.addEventListener("fragmentshown", function (event) {
   // event.fragment = the fragment DOM element
-
+  console.log(event.fragment.dataset);
   if (!event.fragment.dataset.animation) {
     return;
   }

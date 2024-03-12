@@ -64,6 +64,30 @@ rect {
   stroke-dasharray: 1;
 }
 
+.explanation .cross {
+  fill: red;
+  transform-origin: center center;
+  transform: rotate(0deg);
+}
+
+.dropRight {
+  animation: 1s dropRight forwards 1;
+}
+@keyframes dropRight {
+  to {
+    transform: rotate(-22deg);
+  }
+}
+
+.dropLeft {
+  animation: 1s dropLeft forwards 1;
+}
+@keyframes dropLeft {
+  to {
+    transform: rotate(22deg);
+  }
+}
+
 .letsAnimateSlow {
   animation: awesome 4s linear forwards 1;
 }

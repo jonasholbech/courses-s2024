@@ -17,7 +17,7 @@ const snippets = await codeFetcher("t8/1.intro-astro", [
 
 <SlideLayout title="Astro">
   <AgendaSection header="Astro">
-    <!-- <section>
+    <section>
       <p>
         <a
           href="https://www.figma.com/file/SvJQh71RpEmzAHCFuqIs4o/Untitled?type=design&node-id=0%3A1&mode=design&t=ViCCYZvfwEuUVItv-1"
@@ -28,10 +28,10 @@ const snippets = await codeFetcher("t8/1.intro-astro", [
       <p><a href="https://astro.build">https://astro.build</a></p>
       <p>=</p>
       <p><a href="https://github.com/jonasholbech/figma-2-astro">DX</a></p>
-    </section> -->
+    </section>
   </AgendaSection>
 
-  <!-- <AgendaSection header="Hvad er Astro">
+  <AgendaSection header="Hvorfor Astro?">
     <section>
       <ul>
         <li>1. semester lavede i "statiske sites"</li>
@@ -45,17 +45,86 @@ const snippets = await codeFetcher("t8/1.intro-astro", [
       <ol>
         <li>
           I Astro arbejder vi med components. Små isolerede kode blokke der kan
-          stykkes sammen og genbruges.
+          stykkes sammen og genbruges. <span
+            class="fragment highlight-specialty">ligesom Figma</span
+          >
+          <ul>
+            <li class="fragment">
+              Og ALLE bruger components ude i virkeligheden
+            </li>
+          </ul>
         </li>
-        <li class="fragment">Og ALLE bruger components ude i virkeligheden</li>
-        <li class="fragment"><code>template</code> er lidt en component</li>
-        <li class="fragment">Astro er en <code>static site generator</code></li>
-        <li class="fragment">Statiske sites er hurtigere</li>
-        <li class="fragment">Og mere bæredygtige</li>
+
+        <li class="fragment">
+          Astro er en <code>static site generator</code>
+          <ul>
+            <li class="fragment">Statiske sites er hurtigere</li>
+            <li class="fragment">Og mere bæredygtige</li>
+          </ul>
+        </li>
+        <li class="fragment">Vi får "scoped CSS"</li>
+        <li class="fragment">Astro er det "let"</li>
       </ol>
     </section>
+    <section>
+      <ul>
+        <li class="fragment"><code>template</code> er lidt en component</li>
+      </ul>
+    </section>
   </AgendaSection>
+  <AgendaSection header="Hvad er Astro">
+    <section>
+      <h4><code>static site generator?</code></h4>
+      <p>
+        En static site builder bygger et færdigt site og uploader det. Hvis der
+        er nogle serverkald til et (headless) CMS ,fx <code>SupaBase</code>,
+        forgår de før sitet bliver uploadet og de elementer eller sider der
+        bliver genereret, bliver bygget før sitet uploades.
+      </p>
+    </section>
+    <section>
+      <h4><code>static site generator?</code></h4>
 
+      <p>
+        Det betyder jo så også at hvis der bliver ændret noget i CMS'et, vil
+        ændringen ikke være synlig før sitet er buildet og uploadet igen.
+      </p>
+    </section>
+    <section>
+      <h4><code>static site generator?</code></h4>
+
+      <p>
+        Der ville et dynamisk site jo bare få tilført det ændrede indhold og
+        generere en ny sneaker eller hvad det nu kunne være.
+      </p>
+    </section>
+    <section>
+      <h4><code>static site generator?</code></h4>
+
+      <p>
+        En static site builder er et værktøj, der genererer et fuldt statisk
+        HTML-site baseret på rå data og et sæt skabeloner.
+      </p>
+    </section>
+    <section>
+      <p>
+        Grundlæggende automatiserer en static site builder opgaven med at kode
+        individuelle HTML-sider og gør disse sider klar til at blive vist til
+        brugerne på forhånd. Fordi disse HTML-sider er byggede på forhånd, kan
+        de indlæses meget hurtigt i brugernes browsere.
+      </p>
+    </section>
+    <section>
+      <p>Nu skriver i kode der ikke virker i browseren!!</p>
+    </section>
+  </AgendaSection>
+  <AgendaSection header="HJÆLP!" h2="Det lyder helt vildt svært">
+    <section>
+      <p>Tjo</p>
+      <p>Måske</p>
+      <p>Meeen</p>
+    </section>
+  </AgendaSection>
   <AgendaSection header="Hvordan kommer vi fra HTML til Astro?">
     <section data-auto-animate>
       <Code
@@ -97,65 +166,7 @@ const snippets = await codeFetcher("t8/1.intro-astro", [
         dataId="html2astro"
       />
     </section>
-  </AgendaSection> -->
-
-  <AgendaSection header="Advarsler">
-    <section>
-      <ol>
-        <li>
-          Astro laver en mappe kaldet <code>node_modules</code>, lad den være!
-        </li>
-        <li>
-          Lad være med at lægge jeres Astro projekter i Dropbox, Drive, OneDrive
-          etc
-        </li>
-        <li>Jeres "site" mappe må IKKE hedde <code>UI/UX</code> (skråstreg)</li>
-      </ol>
-    </section>
   </AgendaSection>
-  <!-- <AgendaSection header="Hvad er Astro">
-    <section>
-      <h4><code>static site generator?</code></h4>
-      <p>
-        En static site builder bygger et færdigt site og uploader det. Hvis der
-        er nogle serverkald til et (headless) CMS ,fx RestDB eller Directus,
-        forgår de før sitet bliver uploadet og de elementer eller sider der
-        bliver genereret, bliver bygget før sitet uploades.
-      </p>
-    </section>
-    <section>
-      <h4><code>static site generator?</code></h4>
-
-      <p>
-        Det betyder jo så også at hvis der bliver ændret noget i CMS'et, vil
-        ændringen ikke være synlig før sitet er buildet og uploadet igen.
-      </p>
-    </section>
-    <section>
-      <h4><code>static site generator?</code></h4>
-
-      <p>
-        Der ville et dynamisk site jo bare få tilført det ændrede indhold og
-        generere en ny sneaker eller hvad det nu kunne være.
-      </p>
-    </section>
-    <section>
-      <h4><code>static site generator?</code></h4>
-
-      <p>
-        En static site builder er et værktøj, der genererer et fuldt statisk
-        HTML-site baseret på rå data og et sæt skabeloner.
-      </p><p>
-        Grundlæggende automatiserer en static site builder opgaven med at kode
-        individuelle HTML-sider og gør disse sider klar til at blive vist til
-        brugerne på forhånd. Fordi disse HTML-sider er byggede på forhånd, kan
-        de indlæses meget hurtigt i brugernes browsere.
-      </p>
-    </section>
-    <section>
-      <p>Nu skriver i kode der ikke virker i browseren!!</p>
-    </section>
-  </AgendaSection> -->
   <AgendaSection header="Øvelse #1">
     <section>
       <h3>Se components</h3>
@@ -166,7 +177,7 @@ const snippets = await codeFetcher("t8/1.intro-astro", [
         </li>
         <li>Der (som en funktion) kan modtage data</li>
         <li>Vise dataen, og handle på baggrund af data</li>
-        <li>Alt kan gøres til en component (me det vil vi nok ikke)</li>
+        <li>Alt kan gøres til en component (men det vil vi nok ikke)</li>
       </ol>
     </section>
     <section>
@@ -194,26 +205,59 @@ const snippets = await codeFetcher("t8/1.intro-astro", [
       <img data-src="/assets/t8/1.intro-astro/spotify.webp" alt="" />
     </section>
   </AgendaSection>
-  <!-- <AgendaSection header="<code>node.js</code>">
+  <AgendaSection header="<code>node.js</code>">
     <section>
-      <p>
-        Open source server-miljø der kan køre på Windows, Linux, Unix, macOS
-        m.fl.
-      </p>
-      <p>
-        Backend JavaScript runtime miljø som kører JavaScript uden for en
-        webbrowser
-      </p>
-      <p>
-        Node.js kan snakke direkte med eks databaser, fordi det ikke hentes ned
-        i browseren, kan det gøres sikkert
+      <blockquote>
+        <p>
+          Open source server-miljø der kan køre på Windows, Linux, Unix, macOS
+          m.fl.
+        </p>
+        <p>
+          Backend JavaScript runtime miljø som kører JavaScript uden for en
+          webbrowser
+        </p>
+        <p>
+          Node.js kan snakke direkte med eks databaser, fordi det ikke hentes
+          ned i browseren, kan det gøres sikkert
+        </p>
+      </blockquote>
+      <div class="fragment">
+        <Explainer
+          client:only
+          data={[
+            {
+              type: "rect",
+              x: 0,
+              y: 230,
+              width: 960,
+              height: 40,
+              classes: "fragment cross crossDropRight",
+              animation: "dropRight",
+            },
+            {
+              type: "rect",
+              x: 0,
+              y: 230,
+              width: 960,
+              height: 40,
+              classes: "fragment cross crossDropLeft",
+              animation: "dropLeft",
+            },
+          ]}
+        />
+      </div>
+      <p class="fragment">
+        Det er ikke forkert, vi har bare ikke behov for at vide det
       </p>
     </section>
     <section>
-      <p>Det API i arbejde op i mod i starten af T7 var skrevet i node.js</p>
-      <p></p>
+      <p>Det vi skal vide er:</p>
+      <ul>
+        <li>Node.js er noget vi kan "køre" fra terminalen</li>
+        <li>Det giver os mulighed for at automatisere ting</li>
+      </ul>
     </section>
-  </AgendaSection> -->
+  </AgendaSection>
   <AgendaSection h2="<code>node_modules</code>">
     <section>
       <p>
@@ -247,19 +291,32 @@ const snippets = await codeFetcher("t8/1.intro-astro", [
       <p>Men den tager vi en anden dag når vi har lidt erfaring</p>
     </section>
   </AgendaSection>
+  <AgendaSection header="Advarsler">
+    <section>
+      <ol>
+        <li>
+          Astro laver en mappe kaldet <code>node_modules</code>, lad den være!
+        </li>
+        <li>
+          Lad være med at lægge jeres Astro projekter i Dropbox, Drive, OneDrive
+          etc
+        </li>
+        <li>
+          Jeres "site" mappe må IKKE hedde <code>UI/UX</code> (skråstreg)
+        </li>
+      </ol>
+    </section>
+  </AgendaSection>
+
   <AgendaSection header="Live Code">
     <section>
-      <p>Lad os kode til af Products R Us</p>
-      <p>Vil i skrive med (langsomt)</p>
-      <p>Kigge med (hurtigt) <code class="fragment">Vi kan optage det</code></p>
+      <p>Har vi tid?</p>
     </section>
-  </AgendaSection>
-  <AgendaSection header="Øvelse #2">
     <section>
-      <p>Intro til opgaven</p>
-      <p>Status møde klokken <span contenteditable="">10:30</span></p>
+      <p>Lad os kode lidt af Products R Us</p>
     </section>
   </AgendaSection>
+  <AgendaSection header="Intro til opgaven" />
 </SlideLayout>
 
 <!--
