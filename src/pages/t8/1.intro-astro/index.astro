@@ -46,7 +46,7 @@ const snippets = await codeFetcher("t8/1.intro-astro", [
         <li>
           I Astro arbejder vi med components. Små isolerede kode blokke der kan
           stykkes sammen og genbruges. <span
-            class="fragment highlight-specialty">ligesom Figma</span
+            class="fragment highlight-specialty">Li'som i Figma</span
           >
           <ul>
             <li class="fragment">
@@ -54,64 +54,57 @@ const snippets = await codeFetcher("t8/1.intro-astro", [
             </li>
           </ul>
         </li>
-
-        <li class="fragment">
+      </ol>
+    </section>
+    <section>
+      <ol start="2">
+        <li>
           Astro er en <code>static site generator</code>
           <ul>
             <li class="fragment">Statiske sites er hurtigere</li>
             <li class="fragment">Og mere bæredygtige</li>
+            <li class="fragment">
+              Vi skal bare kombinere components og <code>fetch</code>
+            </li>
           </ul>
         </li>
-        <li class="fragment">Vi får "scoped CSS"</li>
-        <li class="fragment">Astro er det "let"</li>
       </ol>
     </section>
     <section>
-      <ul>
-        <li class="fragment"><code>template</code> er lidt en component</li>
-      </ul>
+      <ol start="3">
+        <li>Vi får "scoped" CSS</li>
+      </ol>
+    </section>
+    <section>
+      <ol start="4">
+        <li>
+          Astro er "let" <span class="fragment"
+            ><small>(sammenlignet med de andre)</small></span
+          >
+          <ul class="fragment">
+            <li>
+              De andre:
+              <ul>
+                <li>React</li>
+                <li>Vue</li>
+                <li>Svelte</li>
+                <li>...</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ol>
     </section>
   </AgendaSection>
   <AgendaSection header="Hvad er Astro">
     <section>
-      <h4><code>static site generator?</code></h4>
-      <p>
-        En static site builder bygger et færdigt site og uploader det. Hvis der
-        er nogle serverkald til et (headless) CMS ,fx <code>SupaBase</code>,
-        forgår de før sitet bliver uploadet og de elementer eller sider der
-        bliver genereret, bliver bygget før sitet uploades.
-      </p>
-    </section>
-    <section>
-      <h4><code>static site generator?</code></h4>
-
-      <p>
-        Det betyder jo så også at hvis der bliver ændret noget i CMS'et, vil
-        ændringen ikke være synlig før sitet er buildet og uploadet igen.
-      </p>
-    </section>
-    <section>
-      <h4><code>static site generator?</code></h4>
-
-      <p>
-        Der ville et dynamisk site jo bare få tilført det ændrede indhold og
-        generere en ny sneaker eller hvad det nu kunne være.
-      </p>
-    </section>
-    <section>
-      <h4><code>static site generator?</code></h4>
-
-      <p>
-        En static site builder er et værktøj, der genererer et fuldt statisk
-        HTML-site baseret på rå data og et sæt skabeloner.
-      </p>
+      <p>static site generator</p>
     </section>
     <section>
       <p>
-        Grundlæggende automatiserer en static site builder opgaven med at kode
-        individuelle HTML-sider og gør disse sider klar til at blive vist til
-        brugerne på forhånd. Fordi disse HTML-sider er byggede på forhånd, kan
-        de indlæses meget hurtigt i brugernes browsere.
+        En masse små hjælpere<br /> bla. <code class="fragment"
+          >&lt;Image /&gt;</code
+        >
       </p>
     </section>
     <section>
@@ -195,7 +188,7 @@ const snippets = await codeFetcher("t8/1.intro-astro", [
     </section>
     <section>
       <h2>Jeres tur</h2>
-      <p>15 minutter</p>
+      <p><span contenteditable="true">15</span> minutter</p>
       <p>Identificér components på de to billeder</p>
     </section>
     <section>
