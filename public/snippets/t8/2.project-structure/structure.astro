@@ -1,0 +1,21 @@
+---
+//jeg hedder frontmatter
+//Lokalt så kører jeg hver gang siden loader
+//"remote" kører jeg KUN når du siger "byg skidtet" (npm run build)
+const { data } = Astro.props;
+---
+
+<h1>Her er vores helt almindelige HTML, gerne med {data}</h1>
+
+<style>
+  /* Her er vores CSS. Den er scoped og rammer ikke HTML andre steder end her
+    Så det er ok at skrive h1 {
+        ...
+    }
+    selvom i har h1'ere andre steder
+    */
+</style>
+
+<script>
+  //jeg kan også skrive helt vanilla JS hvis jeg vil
+</script>

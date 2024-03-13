@@ -1,0 +1,189 @@
+---
+import SlideLayout from "../../../layouts/SlideLayout.astro";
+import codeFetcher from "../../../js/codeFetcher";
+import Code from "../../../components/Code.astro";
+import AgendaSection from "../../../components/AgendaSection.astro";
+import Goal from "../../../components/Goal.astro";
+
+const snippets = await codeFetcher("t8/2.project-structure", [
+  "structure.astro",
+  "frontmatter.astro",
+  "script-loading.astro",
+]);
+---
+
+<SlideLayout title="Astro - Project Structure">
+  <AgendaSection header="Astro - Project Structure">
+    <section>
+      <h2>Agenda</h2>
+      <ol>
+        <li>Q/A</li>
+        <li>Project Structure</li>
+        <li>Frontmatter (build time)</li>
+        <li>Client side scripts</li>
+        <li>Coaching</li>
+      </ol>
+    </section>
+  </AgendaSection>
+  <AgendaSection header="Q/A">
+    <section>
+      <h2>???</h2>
+    </section>
+  </AgendaSection>
+  <AgendaSection header="Project Structure">
+    <section>
+      <Code
+        code={snippets["structure.astro"]}
+        language="js"
+        startFrom="1"
+        lineNumbers="|1-6|8|10-17|19-21"
+      />
+    </section>
+  </AgendaSection>
+  <AgendaSection h2="Frontmatter">
+    <section>
+      <p>Whatever we write between</p>
+      <pre><code>---
+---</code></pre>
+      <p>is called "frontmatter"</p>
+      <p>And it only runs on "build time"</p>
+      <p class="fragment">Build time?</p>
+    </section>
+    <section>
+      <Code
+        code={snippets["frontmatter.astro"]}
+        language="js"
+        startFrom="1"
+        stretch
+      />
+      <p>
+        The code runs and prints out the current time when we run <kbd
+          >npm run dev</kbd
+        >
+      </p>
+      <p>But with <kbd>npm run build</kbd> it's fixed at build time</p>
+    </section>
+    <section>
+      <p>It's "static"</p>
+      <p>You have to deploy again to update it</p>
+    </section>
+  </AgendaSection>
+
+  <AgendaSection>
+    <img
+      slot="header-component"
+      src="/assets/t8/2.data/dalle-CPM.webp"
+      alt=""
+      width="600"
+    />
+
+    <section>
+      <dl>
+        <dt>Copy Paste <span class="highlight-specialty">Moment</span></dt>
+        <dd class="fragment grey">
+          When learning something new, we need to know what to adjust
+        </dd>
+        <dt>Copy Paste <span class="highlight-specialty">Mode</span></dt>
+        <dd class="fragment grey">
+          When skilled, we copy from previous projects
+        </dd>
+        <dt>Copy Paste <span class="highlight-specialty">Much</span></dt>
+        <dd class="fragment grey">
+          A questing I ask you when you've blindly copied stuff from
+          Stackoverflow
+        </dd>
+      </dl>
+    </section>
+
+    <section>
+      <p>Wanna go live to our man in the field?</p>
+    </section>
+  </AgendaSection>
+  <!-- <AgendaSection header="Exercise #3">
+    <section>
+      <p>Your Turn</p>
+      <p>Make my code work</p>
+      <CompletionTracker slug="t8-3-data-ex-3" client:visible />
+    </section>
+  </AgendaSection> -->
+  <AgendaSection header="Client side scripts">
+    <section>
+      <h3>Client side script?</h3>
+      <p>What we wrote before Astro</p>
+    </section>
+    <section>
+      <Code
+        code={snippets["script-loading.astro"]}
+        language="js"
+        startFrom="1"
+      />
+      <p class="fragment">
+        If your component is used several times on a page, the script will only
+        be included once.
+      </p>
+    </section>
+    <section>
+      <h3>Recommendation</h3>
+      <p>Put your script files inside <code>src/</code></p>
+      <p>That way Astro will optimize/minimize it for you</p>
+    </section>
+    <section>
+      <h2>Use case</h2>
+      <p>
+        <a href="https://github.com/jonasholbech/astro-burger"
+          >https://github.com/jonasholbech/astro-burger</a
+        >
+      </p>
+    </section>
+  </AgendaSection>
+  <!-- <AgendaSection header="Exercise #4">
+    <section>
+      <p>Your Turn</p>
+      <p>Make the burger menu work</p>
+      <ol>
+        <li>
+          Add <a
+            href="https://github.com/jonasholbech/astro-burger/blob/main/src/components/Menu.astro"
+            >the Menu component</a
+          > to your site
+        </li>
+        <li>
+          Add <a
+            href="https://github.com/jonasholbech/astro-burger/blob/main/src/scripts/burger.js"
+            >The script</a
+          > to your site
+        </li>
+        <li>Link them up correctly</li>
+      </ol>
+      <CompletionTracker slug="t8-3-data-ex-4" client:visible />
+    </section>
+  </AgendaSection> -->
+  <AgendaSection header="The rest of the day">
+    <section>
+      <h3>Coaching</h3>
+    </section>
+    <section>
+      <p>The Astro tutorial</p>
+      <p>
+        <a href="https://docs.astro.build/en/tutorial/0-introduction/"
+          >https://docs.astro.build/en/tutorial/0-introduction/</a
+        >
+      </p>
+    </section>
+    <!-- <section>
+      <h3>Obligatorisk projektvejledning</h3>
+      <p>Have you signed up?</p>
+    </section> -->
+  </AgendaSection>
+</SlideLayout>
+
+<!--
+
+  <Code
+        code={snippets["First.astro"]}
+        language="js"
+        startFrom="1"
+        lineNumbers="1-2|1-5|7|9-11|13-15"
+        stretch
+      />
+ -->
