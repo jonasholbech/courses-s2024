@@ -7,8 +7,7 @@ import CompletionTracker from "../../../components/CompletionTracker.svelte";
 import AgendaSection from "../../../components/AgendaSection.astro";
 import Goal from "../../../components/Goal.astro";
 
-const snippets = await codeFetcher("t8/2.data", [
-  "frontmatter.astro",
+const snippets = await codeFetcher("t8/3.data", [
   "fetch-chain.js",
   "fetch-async.js",
   "fetch-astro.astro",
@@ -17,7 +16,6 @@ const snippets = await codeFetcher("t8/2.data", [
   "arrays-astro.astro",
   "arrays-astro-components.astro",
   "full-map-example.astro",
-  "script-loading.astro",
 ]);
 ---
 
@@ -27,64 +25,19 @@ const snippets = await codeFetcher("t8/2.data", [
       <ol>
         <li>Be able to fetch data in Astro</li>
         <li>Modify <code>.map</code></li>
-        <li>Understand the difference between build time and client side</li>
       </ol>
     </Goal>
 
     <section>
       <h2>Agenda</h2>
       <ol>
-        <li>Frontmatter (build time)</li>
         <li>Data fetching</li>
         <li>Mapping</li>
-        <li>Client side scripts</li>
         <li>Coaching</li>
       </ol>
     </section>
-    <section>
-      <h2>Todays exercises</h2>
-      <p>NONE</p>
-      <!-- <p>monkey see, monkey do</p> -->
-      <p>why?</p>
-    </section>
   </AgendaSection>
-  <!-- <AgendaSection header="Exercise #1">
-    <section>
-      <p>Create a new project</p>
-      <p><kbd>npm create astro@latest</kbd></p>
-      <p><code>npm create astro@latest</code></p>
-      <p><var>npm create astro@latest</var></p>
-      <CompletionTracker slug="t8-3-data-ex-1" client:visible />
-    </section>
-  </AgendaSection> -->
-  <AgendaSection h2="Frontmatter">
-    <section>
-      <p>Whatever we write between</p>
-      <pre><code>---
----</code></pre>
-      <p>is called "frontmatter"</p>
-      <p>And it only runs on "build time"</p>
-      <p class="fragment">Build time?</p>
-    </section>
-    <section>
-      <Code
-        code={snippets["frontmatter.astro"]}
-        language="js"
-        startFrom="1"
-        stretch
-      />
-      <p>
-        The code runs and prints out the current time when we run <kbd
-          >npm run dev</kbd
-        >
-      </p>
-      <p>But with <kbd>npm run build</kbd> it's fixed at build time</p>
-    </section>
-    <section>
-      <p>It's "static"</p>
-      <p>You have to deploy again to update it</p>
-    </section>
-  </AgendaSection>
+
   <AgendaSection header="Data Fetching">
     <section>
       <h2><code>fetch</code></h2>
@@ -137,13 +90,7 @@ const snippets = await codeFetcher("t8/2.data", [
       />
     </section>
   </AgendaSection>
-  <!-- <AgendaSection header="Exercise #2">
-    <section>
-      <p>Your Turn</p>
-      <p>Make my code work</p>
-      <CompletionTracker slug="t8-3-data-ex-2" client:visible />
-    </section>
-  </AgendaSection> -->
+
   <AgendaSection header="Mapping">
     <section>
       <p>OK, now I got my data, now what?</p>
@@ -190,102 +137,6 @@ const snippets = await codeFetcher("t8/2.data", [
       </ol>
     </section>
   </AgendaSection>
-  <AgendaSection>
-    <img
-      slot="header-component"
-      src="/assets/t8/2.data/dalle-CPM.webp"
-      alt=""
-      width="600"
-    />
-
-    <section>
-      <dl>
-        <dt>Copy Paste <span class="highlight-specialty">Moment</span></dt>
-        <dd class="fragment grey">
-          When learning something new, we need to know what to adjust
-        </dd>
-        <dt>Copy Paste <span class="highlight-specialty">Mode</span></dt>
-        <dd class="fragment grey">
-          When skilled, we copy from previous projects
-        </dd>
-        <dt>Copy Paste <span class="highlight-specialty">Much</span></dt>
-        <dd class="fragment grey">
-          A questing I ask you when you've blindly copied stuff from
-          Stackoverflow
-        </dd>
-      </dl>
-    </section>
-    <section>
-      <Code
-        code={snippets["full-map-example.astro"]}
-        language="js"
-        startFrom="1"
-        stretch
-      />
-    </section>
-    <section>
-      <p>Wanna go live to our man in the field?</p>
-    </section>
-  </AgendaSection>
-  <!-- <AgendaSection header="Exercise #3">
-    <section>
-      <p>Your Turn</p>
-      <p>Make my code work</p>
-      <CompletionTracker slug="t8-3-data-ex-3" client:visible />
-    </section>
-  </AgendaSection> -->
-  <AgendaSection header="Client side scripts">
-    <section>
-      <h3>Client side script?</h3>
-      <p>What we wrote before Astro</p>
-    </section>
-    <section>
-      <Code
-        code={snippets["script-loading.astro"]}
-        language="js"
-        startFrom="1"
-      />
-      <p class="fragment">
-        If your component is used several times on a page, the script will only
-        be included once.
-      </p>
-    </section>
-    <section>
-      <h3>Recommendation</h3>
-      <p>Put your script files inside <code>src/</code></p>
-      <p>That way Astro will optimize/minimize it for you</p>
-    </section>
-    <section>
-      <h2>Use case</h2>
-      <p>
-        <a href="https://github.com/jonasholbech/astro-burger"
-          >https://github.com/jonasholbech/astro-burger</a
-        >
-      </p>
-    </section>
-  </AgendaSection>
-  <!-- <AgendaSection header="Exercise #4">
-    <section>
-      <p>Your Turn</p>
-      <p>Make the burger menu work</p>
-      <ol>
-        <li>
-          Add <a
-            href="https://github.com/jonasholbech/astro-burger/blob/main/src/components/Menu.astro"
-            >the Menu component</a
-          > to your site
-        </li>
-        <li>
-          Add <a
-            href="https://github.com/jonasholbech/astro-burger/blob/main/src/scripts/burger.js"
-            >The script</a
-          > to your site
-        </li>
-        <li>Link them up correctly</li>
-      </ol>
-      <CompletionTracker slug="t8-3-data-ex-4" client:visible />
-    </section>
-  </AgendaSection> -->
   <AgendaSection header="The rest of the day">
     <section>
       <h3>Coaching</h3>
